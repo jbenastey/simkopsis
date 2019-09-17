@@ -1,13 +1,13 @@
 ###################
-Web Base Logistics Order APP
+Sistem Informasi Koperasi Syariah
 ###################
 
-Aplikasi order barang perusahaan berbasis website, menggunakan Digtive CI custom-foundation
+Sistem Informasi Koperasi Simpan Pinjam Syariah berbasi web, Copyright 2019 digtive.id
 
 
 *******************
-writen by bagussjm
+writen by bagussjm,jbenastey
 *******************
 
-Founder Digtive
+Creative Crew
 
