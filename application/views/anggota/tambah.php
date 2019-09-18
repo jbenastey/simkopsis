@@ -4,7 +4,7 @@
             <div class="card-panel">
                 <h5 class="more-text center grey-text">tambah data anggota koperasi</h5>
 
-                <form action="<?= base_url('AnggotaController/insert')?>" method="post" autocomplete="off">
+                <form action="<?= base_url('anggota/tambah')?>" method="post" autocomplete="off">
                     <h6 class="divider"></h6>
                     <h6 class="more-text">Informasi pribadi</h6>
 
@@ -48,23 +48,33 @@
                             <label for="pendapatan">Pendapatan Perbulan</label>
                         </div>
 
-                        <div class="input-field col s6 m6" style="padding-left: 52px">
+                        <div class="input-field col s3 m3" style="padding-left: 52px">
+                            <label for="status-kawin" style="padding-left: 42px">Jenis Kelamin</label><br><br>
+                            <select name="jenis-kelamin" id="jenis-kelamin">
+                                <option value="L" selected>Laki-laki</option>
+                                <option value="P">Perempuan</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s3 m3" style="padding-left: 52px">
                             <label for="status-kawin" style="padding-left: 42px">Status Kawin</label><br><br>
                             <select name="status-kawin" id="status-kawin">
-                                <option value="kawin" selected>Kawin</option>
-                                <option value="belum">Belum Kawin</option>
+                                <option value="lajang" selected>Lajang</option>
+                                <option value="menikah">Menikah</option>
+                                <option value="janda">Janda</option>
+                                <option value="duda">Duda</option>
                             </select>
                         </div>
 
                         <div class="input-field col s6 m6" style="padding-left: 52px">
                             <label for="agama" style="padding-left: 42px">Agama</label><br><br>
                             <select name="agama" id="agama">
-                                <option value="islam" selected>Islam</option>
-                                <option value="kristen">Kristen</option>
-                                <option value="katholik">Katholik</option>
-                                <option value="hindu">Hindu</option>
-                                <option value="budha">Budha</option>
-                                <option value="konghucu">Konghucu</option>
+                                <option value="Islam" selected>Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katolik">Katholik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                                <option value="Konghuchu">Konghucu</option>
                             </select>
                         </div>
 
