@@ -91,10 +91,14 @@
                     <h5 class="divider"></h5>
                 </div>
 
-                <div class="input-field col s12 m12">
-                    <i class="mdi-action-perm-identity prefix grey-text text-lighten-1"></i>
-                    <input id="anggota" type="text" class="validate" name="anggota-form" required placeholder="ketikkan nama anggota">
-                    <label for="anggota">Anggota</label>
+                <div class="col s12 m1">
+                    <h3 class="grey-text">
+                        <i class="mdi-action-perm-identity"></i>
+                    </h3>
+                </div>
+                <div class="input-field col s12 m11">
+                    <input id="search-anggota" type="text" class="validate custom-box-search" name="anggota-form" required placeholder="ketikkan nama anggota">
+                    <input type="text" name="anggota" id="id-anggota" hidden>
                 </div>
 
                 <div class="input-field col s12 m12">

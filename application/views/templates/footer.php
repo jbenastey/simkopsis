@@ -94,6 +94,7 @@
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/numeral/numeral.min.js')?>"></script>
             <!-- easy autocomplete -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/easy-autocomplete/jquery.easy-autocomplete.js')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/simpanan.js')?>"></script>
 
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/jquery-input-mask/jquery.mask.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/app/maskConfig.js')?>"></script>

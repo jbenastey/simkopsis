@@ -44,7 +44,7 @@
 
                         <div class="input-field col s12 m6">
                             <i class="mdi-editor-attach-money prefix grey-text text-lighten-1"></i>
-                            <input id="pendapatan" type="text" name="pendapatan" required>
+                            <input id="pendapatan" type="text" name="pendapatan" required class="rupiah-input">
                             <label for="pendapatan">Pendapatan Perbulan</label>
                         </div>
 
@@ -85,7 +85,7 @@
                     <div class="row margin">
                         <div class="input-field col s12 m6">
                             <i class="mdi-action-credit-card prefix grey-text text-lighten-1"></i>
-                            <input id="nik" type="text" name="nik" required>
+                            <input id="nik" type="number" name="nik" required>
                             <label for="nik">Nomor NIK</label>
                         </div>
 

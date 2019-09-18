@@ -4,7 +4,7 @@
             <div class="card-content margin" style="margin: 12px;">
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <h4 class="cardbox-text light left margin">daftar anggota</h4>
+                        <h4 class="cardbox-text light left margin">daftar anggota koperasi</h4>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,9 @@
 				?>
 				<tr>
 					<td class="grey-text text-darken-1"><?=$no?></td>
-					<td class="grey-text text-darken-1"><a href="<?=base_url('anggota/'.$value['anggota_id'])?>"><?=$value['anggota_nama']?></a></td>
+					<td class="grey-text text-darken-1">
+                        <a href="<?=base_url('anggota/'.$value['anggota_id'])?>" style="text-decoration: underline"><?=$value['anggota_nama']?></a>
+                    </td>
 					<td class="grey-text text-darken-1"><?=$value['anggota_alamat']?></td>
 					<td class="grey-text text-darken-1"><?=$value['anggota_email']?></td>
 					<td class="grey-text text-darken-1"><?=$value['anggota_nomor_hp']?></td>
