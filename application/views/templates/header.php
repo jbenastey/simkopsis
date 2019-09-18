@@ -103,7 +103,7 @@
                 </li>
 
                 <li class="bold">
-                    <a href="<?= base_url('pelanggan')?>" class="waves-effect waves-cyan">
+                    <a href="<?= base_url('anggota')?>" class="waves-effect waves-cyan">
                         <i class="mdi-social-people"></i> Anggota
                     </a>
                 </li>

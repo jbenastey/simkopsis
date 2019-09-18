@@ -1,0 +1,114 @@
+<div id="sales-top-home-page">
+    <div class="row">
+        <div class="col s12 m12">
+            <div class="card-panel">
+                <h5 class="more-text center grey-text">tambah data anggota koperasi</h5>
+
+                <form action="<?= base_url('AnggotaController/insert')?>" method="post" autocomplete="off">
+                    <h6 class="divider"></h6>
+                    <h6 class="more-text">Informasi pribadi</h6>
+
+                    <div class="row margin">
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-action-perm-identity prefix grey-text text-lighten-1"></i>
+                            <input id="nama" type="text" name="nama" required>
+                            <label for="nama">Nama Lengkap</label>
+                        </div>
+
+                        <div class="input-field col s12 m4">
+                            <i class="mdi-maps-place prefix grey-text text-lighten-1"></i>
+                            <input id="tempat-lahir" type="text" name="tempat-lahir" required>
+                            <label for="tempat-lahir">Tempat Lahir</label>
+                        </div>
+                        <div class="input-field col s12 m2">
+                            <input id="tanggal-lahir" type="date" name="tanggal-lahir" required>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-action-wallet-giftcard prefix grey-text text-lighten-1"></i>
+                            <input id="nama-ibu" type="text" name="nama-ibu" required>
+                            <label for="nama-ibu">Nama Ibu Kandung</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-social-school prefix grey-text text-lighten-1"></i>
+                            <input id="pendidikan" type="text" name="pendidikan" required>
+                            <label for="pendidikan">Pendidikan Terakhir Calon Anggota</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-action-wallet-travel prefix grey-text text-lighten-1"></i>
+                            <input id="pekerjaan" type="text" name="pekerjaan" required>
+                            <label for="pekerjaan">Pekerjaan</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-editor-attach-money prefix grey-text text-lighten-1"></i>
+                            <input id="pendapatan" type="text" name="pendapatan" required>
+                            <label for="pendapatan">Pendapatan Perbulan</label>
+                        </div>
+
+                        <div class="input-field col s6 m6" style="padding-left: 52px">
+                            <label for="status-kawin" style="padding-left: 42px">Status Kawin</label><br><br>
+                            <select name="status-kawin" id="status-kawin">
+                                <option value="kawin" selected>Kawin</option>
+                                <option value="belum">Belum Kawin</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s6 m6" style="padding-left: 52px">
+                            <label for="agama" style="padding-left: 42px">Agama</label><br><br>
+                            <select name="agama" id="agama">
+                                <option value="islam" selected>Islam</option>
+                                <option value="kristen">Kristen</option>
+                                <option value="katholik">Katholik</option>
+                                <option value="hindu">Hindu</option>
+                                <option value="budha">Budha</option>
+                                <option value="konghucu">Konghucu</option>
+                            </select>
+                        </div>
+
+
+                    </div>
+
+                    <h6 class="more-text">Kontak dan lainnya</h6>
+                    <div class="row margin">
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-action-credit-card prefix grey-text text-lighten-1"></i>
+                            <input id="nik" type="text" name="nik" required>
+                            <label for="nik">Nomor NIK</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-action-perm-phone-msg prefix grey-text text-lighten-1"></i>
+                            <input id="telepon" type="text" name="telepon" required>
+                            <label for="telepon">No HP</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-communication-email prefix grey-text text-lighten-1"></i>
+                            <input id="email" type="email" name="email" >
+                            <label for="email">Alamat Email</label>
+                        </div>
+
+                        <div class="input-field col s12 m6">
+                            <i class="mdi-maps-pin-drop prefix grey-text text-lighten-1"></i>
+                            <input id="alamat" type="text" name="alamat" >
+                            <label for="alamat">Alamat Saat Ini</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <a href="<?= base_url('anggota')?>" class="btn waves-effect col s12 z-depth-0 grey lighten-4 black-text">batalkan</a>
+                        </div>
+                        <div class="input-field col s12 m6">
+                            <button type="submit" name="tambah" class="btn waves-effect waves-light col s12 blue">tambahkan</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

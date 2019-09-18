@@ -11,11 +11,6 @@
 		public function __construct()
 		{
 			parent::__construct();
-			if (!parent::hasLogin()){
-				redirect('login');
-			}else{
-
-			}
 		}
 		
 
