@@ -116,7 +116,7 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('pemesanan')?>">Amanah</a>
+                                    <li><a href="<?= base_url('simpanan-amanah')?>">Amanah</a>
                                     </li>
                                     <li><a href="<?= base_url('pemesanan/permohonan')?>">Berjangka</a>
                                     </li>
