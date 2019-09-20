@@ -94,13 +94,10 @@
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/numeral/numeral.min.js')?>"></script>
             <!-- easy autocomplete -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/easy-autocomplete/jquery.easy-autocomplete.js')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/search.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/barang.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/pemesanan.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/pemesananBarang.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/konfirmasiPesanan.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/cancelPesanan.js?v=1.0.3')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/retur.js?v=1.0.3')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/simpanan.js')?>"></script>
+
+            <script type="text/javascript" src="<?= base_url('assets/js/plugins/jquery-input-mask/jquery.mask.js')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/maskConfig.js')?>"></script>
             <!-- dataTables js plugins-->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/jquery.dataTables.min.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/dataTables.material.min.js')?>"></script>
