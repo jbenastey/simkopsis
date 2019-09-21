@@ -11,31 +11,39 @@
                     <i class="mdi-content-filter-list"></i>
                 </a>
 
-                <span class="card-title activator grey-text text-darken-4">John Kamal</span>
-                <p class="grey-text"><i class="mdi-action-perm-identity "></i> level</p>
-                <p class="grey-text"><i class="mdi-action-store"></i> Pekeraan</p>
-                <p class="grey-text"><i class="mdi-communication-email"></i> Emil</p>
+                <span class="card-title activator grey-text text-darken-4"><?=$anggota['anggota_nama']?></span>
+                <p class="grey-text"><i class="mdi-action-perm-identity "></i>
+					<?php
+					if ($anggota['anggota_jk'] == 'L'){
+						echo 'Laki-laki';
+					} else {
+						echo 'Perempuan';
+					}
+					?>
+				</p>
+                <p class="grey-text"><i class="mdi-action-store"></i> <?=$anggota['anggota_pekerjaan']?></p>
+                <p class="grey-text"><i class="mdi-communication-email"></i> <?=$anggota['anggota_email']?></p>
 
             </div>
             <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">John Kamal <i class="mdi-navigation-close right"></i></span>
+                <span class="card-title grey-text text-darken-4"><?=$anggota['anggota_nama']?> <i class="mdi-navigation-close right"></i></span>
 
                 <h5 class="divider"></h5>
                 <p class="ultra-small margin more-text" style="padding-left: 0px !important;">Informasi pribadi</p>
-                <p><i class="mdi-social-cake"></i> TTL</p>
-                <p><i class="mdi-action-favorite"></i> Kawin</p>
-                <p><i class="mdi-av-recent-actors"></i> Agama</p>
-                <p><i class="mdi-action-wallet-giftcard"></i> Ibu Tiri</p>
-                <p><i class="mdi-social-school"></i> Pendidikan</p>
-                <p><i class="mdi-action-wallet-travel"></i> Pekerjaan</p>
-                <p><i class="mdi-editor-attach-money"></i> Pendapatan</p>
+                <p><i class="mdi-social-cake"></i> <?=$anggota['anggota_tempat_lahir']?>, <?=$anggota['anggota_tanggal_lahir']?></p>
+                <p><i class="mdi-action-favorite"></i> <?=$anggota['anggota_status_kawin']?></p>
+                <p><i class="mdi-av-recent-actors"></i> <?=$anggota['anggota_agama']?></p>
+                <p><i class="mdi-action-wallet-giftcard"></i> <?=$anggota['anggota_nama_ibu']?></p>
+                <p><i class="mdi-social-school"></i> <?=$anggota['anggota_pendidikan']?></p>
+                <p><i class="mdi-action-wallet-travel"></i> <?=$anggota['anggota_pekerjaan']?></p>
+                <p><i class="mdi-editor-attach-money"></i> <?=$anggota['anggota_pendapatan']?></p>
 
                 <p class="divider"></p>
                 <p class="ultra-small margin more-text" style="padding-left: 0px !important;">Kontak</p>
-                <p><i class="mdi-action-credit-card"></i> NIK</p>
-                <p><i class="mdi-action-perm-phone-msg"></i> Lelepon</p>
-                <p><i class="mdi-communication-email"></i> Emil</p>
-                <p><i class="mdi-maps-pin-drop"></i> Lalamat</p>
+                <p><i class="mdi-action-credit-card"></i> <?=$anggota['anggota_nik']?></p>
+                <p><i class="mdi-action-perm-phone-msg"></i> <?=$anggota['anggota_nomor_hp']?></p>
+                <p><i class="mdi-communication-email"></i> <?=$anggota['anggota_email']?></p>
+                <p><i class="mdi-maps-pin-drop"></i> <?=$anggota['anggota_alamat']?></p>
 
             </div>
         </div>
@@ -63,213 +71,27 @@
                     </div>
                     <div class="col s12 m12">
                         <ul class="collection">
+							<?php
+							foreach ($simpanan as $key=>$value):
+							?>
                             <li class="collection-item">
                                 <div class="row">
                                     <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
+                                        <i class="mdi-av-timer"></i> <?=$value['simpanan_date_created']?>
                                     </div>
                                     <div class="col s3 m3">
                                         <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
+                                            Rp. <?=$value['simpanan_total']?>
                                         </span>
                                     </div>
                                     <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
+                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i> Simpanan <?=$value['simpanan_jenis']?></span>
                                     </div>
                                 </div>
                             </li>
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li class="collection-item">
-                                <div class="row">
-                                    <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
-                                    </div>
-                                    <div class="col s3 m3">
-                                        <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
-                                        </span>
-                                    </div>
-                                    <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-account-balance-wallet"></i>Simpanan Berjangka</span>
-                                    </div>
-                                </div>
-                            </li>
-
-
-
-
-
+							<?php
+							endforeach;
+							?>
                         </ul>
                     </div>
                 </div>

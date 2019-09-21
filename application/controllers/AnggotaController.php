@@ -17,10 +17,17 @@ class AnggotaController extends GLOBAL_Controller
         parent::template('anggota/index',$data);
     }
 
-    public function detail($kode)
+    public function detail($id)
     {
-        $data['title'] = 'Data anggota '.$kode;
-        $data['anggota'] = 'this value get detail anggota from db';
+        $data['title'] = 'Data anggota ';
+		$query = array(
+			'anggota_id' => $id
+		);
+		$data['anggota'] = parent::model('AnggotaModel')->lihat_anggota($query);
+		$querySimpanan = array(
+			'simpanan_anggota_id' => $id
+		);
+		$data['simpanan'] = parent::model('AnggotaModel')->lihat_simpanan($querySimpanan)->result_array();
 
         parent::template('anggota/detail',$data);
     }
