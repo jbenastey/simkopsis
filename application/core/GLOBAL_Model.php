@@ -39,6 +39,17 @@
 		{
 			return $this->db;
 		}
+		// join
+		public function get_join_table($sourcetable, $jointable)
+		{
+			$this->db->select('*');
+			$this->db->from($sourcetable['name']);
+			for ($i = 0; $i < count($jointable['table']); $i++) {
+				$this->db->join($jointable['table'][$i], $jointable['table'][$i] . '.' . $jointable['id'][$i] . ' = ' . $sourcetable['name'] . '.' . $sourcetable[0][$i]);
+			}
+			$query = $this->db->get();
+			return $query;
+		}
 		
 		//insert
 		public function insert_data($table,$data)

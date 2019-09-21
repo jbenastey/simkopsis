@@ -29,18 +29,22 @@
                 </tr>
                 </thead>
                 <tbody>
+				<?php
+				$no  = 1;
+				foreach ($amanah as $key=>$value):
+				?>
                 <tr>
-                    <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1"><?=$no?></td>
                     <td class="teal-text text-darken-1">
                         <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
-                            John Kamal
+							<?=$value['anggota_nama']?>
                         </a>
                     </td>
-                    <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
                     <td class="grey-text text-darken-1">
-                        kambing
+						<?=$value['simpanan_date_created']?>
                     </td>
-                    <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1"><?=$value['simpanan_total']?></td>
                     <td>
                         <div class="row">
                             <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
@@ -67,6 +71,10 @@
                         <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
                     </div>
                 </div>
+				<?php
+				$no++;
+				endforeach;
+				?>
                 </tbody>
             </table>
         </div>
@@ -83,7 +91,7 @@
 
 <!-- Modal delete -->
 <div id="modal-tambah" class="modal">
-    <form action="#" method="post">
+    <?=form_open('simpanan-amanah')?>
         <div class="modal-content center">
             <div class="row">
                 <div class="col s12 m12 center">
@@ -118,8 +126,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="waves-effect waves-red btn-flat modal-action modal-close">lanjutkan</a>
+            <button type="submit" name="simpan" class="waves-effect waves-red btn-flat modal-action modal-close">lanjutkan</button>
             <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
         </div>
-    </form>
+    <?=form_close()?>
 </div>
