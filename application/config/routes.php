@@ -10,6 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 * pinjaman routes modul
 	 * */
 	$route['pinjaman-mudharabah'] = 'PinjamanController/pinjamanMudharabah';
+	$route['pinjaman-mudharabah/tambah'] = 'PinjamanController/tambahMudharabah';
 
 	/*
 	 * simpanan routes modul

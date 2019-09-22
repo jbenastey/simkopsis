@@ -14,4 +14,11 @@ class PinjamanController extends GLOBAL_Controller{
         parent::template('pinjaman/mudharabah',$data);
     }
 
+    public function tambahMudharabah()
+    {
+        $data['title'] = 'Tambah data pinjaman mudharabah';
+
+        parent::template('pinjaman/tambahMudharabah',$data);
+    }
+
 }

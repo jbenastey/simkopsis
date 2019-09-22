@@ -20,31 +20,38 @@
             <table class="bordered" id="barang-table">
                 <thead>
                 <tr>
-                    <th >Kode Anggota</th>
+                    <th >Kode Pengajuan</th>
                     <th >Nama Anggota</th>
                     <th >Pekerjaan</th>
-                    <th >Tanggal Simpan</th>
-                    <th >Total Setoran</th>
+                    <th >Tanggal Mengajukan</th>
+                    <th >Total Pinjaman</th>
+                    <th >Status Pengajuan Pinjaman</th>
                     <th class="center">AKSI</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1">
+                        <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
+                            2043
+                        </a>
+                    </td>
                     <td class="teal-text text-darken-1">
                         <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
                             John Kamal
                         </a>
                     </td>
                     <td class="grey-text text-darken-1">kambing</td>
-                    <td class="grey-text text-darken-1">
-                        kambing
-                    </td>
                     <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1">kambing</td>
+                    <td class="grey-text text-darken-1"><span class="task-cat orange">menunggu</span></td>
                     <td>
                         <div class="row">
-                            <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
-                                <i class="mdi-content-create orange-text"></i>
+                            <a href="#" class="btn-flat waves-effect waves-red col l6 center" title="tolak pengajuan">
+                                <i class="mdi-av-not-interested red-text"></i>
+                            </a>
+                            <a href="#" class="btn-flat waves-effect waves-green col l6 center" title="setujui pengajuan">
+                                <i class="mdi-action-done green-text"></i>
                             </a>
                         </div>
                     </td>
@@ -75,53 +82,9 @@
 
 <!-- Floating Action Button -->
 <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
-    <a href="#modal-tambah" class="btn-floating btn-large teal modal-trigger" >
+    <a href="<?= base_url('pinjaman-mudharabah/tambah')?>" class="btn-floating btn-large teal modal-trigger" >
         <i class="mdi-av-playlist-add"></i>
     </a>
 </div>
 <!-- Floating Action Button -->
 
-<!-- Modal delete -->
-<div id="modal-tambah" class="modal">
-    <form action="#" method="post">
-        <div class="modal-content center">
-            <div class="row">
-                <div class="col s12 m12 center">
-                    <h5 class="more-text">tambah data simpanan amanah</h5>
-                    <h5 class="divider"></h5>
-                </div>
-
-                <div class="col s12 m1">
-                    <h3 class="grey-text">
-                        <i class="mdi-action-perm-identity"></i>
-                    </h3>
-                </div>
-                <div class="input-field col s12 m11">
-                    <input id="search-anggota" type="text" class="validate custom-box-search" name="anggota-form" required placeholder="ketikkan nama anggota">
-                    <input type="text" name="anggota" id="id-anggota" hidden>
-                    <!--set jenis simpanan directly-->
-                    <input type="text" name="jenis" value="amanah" hidden>
-                </div>
-
-                <div class="input-field col s12 m12">
-                    <i class="mdi-action-account-balance-wallet prefix grey-text text-lighten-1"></i>
-                    <input id="setoran" type="text" class="validate rupiah-input" name="setoran" required>
-                    <label for="setoran">Jumlah Setoran</label>
-                </div>
-
-                <div class="col s12 m12 ">
-                    <div id="simpanan-alert" class="card green lighten-5 z-depth-1">
-                        <div class="card-content green-text ">
-                            <p>SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <div class="modal-footer">
-            <a href="#!" class="waves-effect waves-red btn-flat modal-action modal-close">lanjutkan</a>
-            <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
-        </div>
-    </form>
-</div>
