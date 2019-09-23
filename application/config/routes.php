@@ -7,7 +7,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['logout'] = 'AuthController/logout';
 
 	/*
-	 * simpanan modul routes
+	 * pinjaman routes modul
+	 * */
+	$route['pinjaman-mudharabah'] = 'PinjamanController/pinjamanMudharabah';
+	$route['pinjaman-mudharabah/tambah'] = 'PinjamanController/tambahMudharabah';
+
+	/*
+	 * simpanan routes modul
 	 * */
 	$route['simpanan-amanah'] = 'SimpananController/simpananAmanah';
 

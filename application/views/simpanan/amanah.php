@@ -107,6 +107,8 @@
                 <div class="input-field col s12 m11">
                     <input id="search-anggota" type="text" class="validate custom-box-search" name="anggota-form" required placeholder="ketikkan nama anggota">
                     <input type="text" name="anggota" id="id-anggota" hidden>
+                    <!--set jenis simpanan directly-->
+                    <input type="text" name="jenis" value="amanah" hidden>
                 </div>
 
                 <div class="input-field col s12 m12">
