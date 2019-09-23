@@ -178,33 +178,11 @@
                     <ul class="collapsible collapsible-accordion">
                         <li class="bold">
                             <a class="collapsible-header waves-effect waves-cyan">
-                                <i class="mdi-action-restore"></i> Arsip Data
-                            </a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="<?= base_url('arsip/barang')?>">Anggota</a>
-                                    </li>
-                                    <li><a href="<?= base_url('arsip/pelanggan')?>">Simpanan</a>
-                                    </li>
-                                    <li><a href="<?= base_url('arsip/pengguna')?>">Pinjaman</a>
-                                    </li>
-                                    <li><a href="<?= base_url('arsip/pengguna')?>">Angsuran</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="no-padding">
-                    <ul class="collapsible collapsible-accordion">
-                        <li class="bold">
-                            <a class="collapsible-header waves-effect waves-cyan">
                                 <i class="mdi-action-book"></i> Laporan
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('arsip/barang')?>">Anggota</a>
+                                    <li><a href="<?= base_url('laporan-anggota')?>">Anggota</a>
                                     </li>
                                     <li><a href="<?= base_url('arsip/pelanggan')?>">Simpanan</a>
                                     </li>
