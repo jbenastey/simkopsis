@@ -37,6 +37,28 @@
                 ));
             }
         }
+        public function detailAnggota($id)
+        {
+
+			$query = array(
+				'anggota_id' => $id
+			);
+            $anggotas = parent::model('anggota')->lihat_anggota($query);
+
+            if (!empty($anggotas)){
+                echo json_encode(array(
+                    'data' => $anggotas,
+                    'status' => '200',
+                    'message' => 'menampilkan detail data anggota'
+                ));
+            }else{
+                echo json_encode(array(
+                   'data' => null,
+                   'status' => '500',
+                   'message' => 'data anggota kosong'
+                ));
+            }
+        }
 
         /*
          * end of get data service
