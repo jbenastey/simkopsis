@@ -92,6 +92,38 @@ class AnggotaController extends GLOBAL_Controller
 				'anggota_alamat' => parent::post('alamat')
 			);
 
+			$config['upload_path'] = './assets/upload/dokumen/';
+			$config['allowed_types'] = 'jpg|png|jpeg';
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+
+			$this->upload->do_upload('ktp');
+			$ktp = $this->upload->data('file_name');
+			$this->upload->do_upload('kk');
+			$kk = $this->upload->data('file_name');
+			$this->upload->do_upload('listrik');
+			$listrik = $this->upload->data('file_name');
+			$this->upload->do_upload('jaminan');
+			$jaminan = $this->upload->data('file_name');
+			$this->upload->do_upload('kerja');
+			$kerja = $this->upload->data('file_name');
+			$this->upload->do_upload('gaji');
+			$gaji = $this->upload->data('file_name');
+			$this->upload->do_upload('rekening');
+			$rekening = $this->upload->data('file_name');
+
+			$dataUpload = array(
+				'ktp' => $ktp,
+				'kk' => $kk,
+				'listrik' => $listrik,
+				'jaminan' => $jaminan,
+				'kerja' => $kerja,
+				'gaji' => $gaji,
+				'rekening' => $rekening,
+			);
+
+			$data['anggota_dokumen'] = json_encode($dataUpload);
+
 			$simpan = parent::model('AnggotaModel')->ubah($id,$data);
 
 			if ($simpan > 0 ){

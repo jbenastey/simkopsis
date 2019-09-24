@@ -2,9 +2,9 @@
 	<div class="row">
 		<div class="col s12 m12">
 			<div class="card-panel">
-				<h5 class="more-text center grey-text">tambah data anggota koperasi</h5>
+				<h5 class="more-text center grey-text">ubah data anggota koperasi</h5>
 
-				<form action="<?= base_url('anggota/ubah/'.$anggota['anggota_id'])?>" method="post" autocomplete="off">
+				<form action="<?= base_url('anggota/ubah/'.$anggota['anggota_id'])?>" enctype="multipart/form-data" method="post" autocomplete="off">
 					<h6 class="divider"></h6>
 					<h6 class="more-text">Informasi pribadi</h6>
 
@@ -105,6 +105,76 @@
 							<i class="mdi-maps-pin-drop prefix grey-text text-lighten-1"></i>
 							<input id="alamat" type="text" name="alamat" value="<?=$anggota['anggota_alamat']?>" >
 							<label for="alamat">Alamat Saat Ini</label>
+						</div>
+					</div>
+
+					<h6 class="more-text">Dokumen Syarat Peminjaman</h6>
+
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="ktp">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="fotocopy KTP">
+						</div>
+					</div>
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="kk">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="fotocopy KK">
+						</div>
+					</div>
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="listrik">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text"
+								   placeholder="fotocopy Tagihan Listrik">
+						</div>
+					</div>
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="jaminan">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text"
+								   placeholder="fotocopy Jaminan (BPKB/STNK dll)">
+						</div>
+					</div>
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="kerja">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text"
+								   placeholder="Surat Keterangan Bekerja (Karyawan)">
+						</div>
+					</div>
+					<div class="file-field input-field col s6 m6">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="gaji">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text" placeholder="Slip Gaji Karyawan">
+						</div>
+					</div>
+					<div class="file-field input-field col s12 m12">
+						<div class="btn">
+							<span><i class="mdi-file-attachment"></i></span>
+							<input type="file" name="rekening">
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" type="text"
+								   placeholder="Rekening 3 bulan terakhir">
 						</div>
 					</div>
 
