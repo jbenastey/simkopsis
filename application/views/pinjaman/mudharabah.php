@@ -30,21 +30,33 @@
                 </tr>
                 </thead>
                 <tbody>
+				<?php
+				$no = 1;
+				foreach ($mudharabah as $key=>$value):
+				?>
                 <tr>
                     <td class="grey-text text-darken-1">
-                        <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
-                            2043
-                        </a>
+                        <?=$no?>
                     </td>
                     <td class="teal-text text-darken-1">
-                        <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
-                            John Kamal
+                        <a href="<?= base_url('anggota/'.$value['anggota_id'])?>" style="text-decoration: underline">
+                            <?=$value['anggota_nama']?>
                         </a>
                     </td>
-                    <td class="grey-text text-darken-1">kambing</td>
-                    <td class="grey-text text-darken-1">kambing</td>
-                    <td class="grey-text text-darken-1">kambing</td>
-                    <td class="grey-text text-darken-1"><span class="task-cat orange">menunggu</span></td>
+                    <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
+                    <td class="grey-text text-darken-1"><?=$value['pinjaman_date_created']?></td>
+                    <td class="grey-text text-darken-1"><?=$value['pinjaman_total']?></td>
+                    <td class="grey-text text-darken-1">
+						<?php if ($value['pinjaman_status'] == 'tunggu'):?>
+						<span class="task-cat orange">Menunggu</span>
+						<?php elseif ($value['pinjaman_status'] == 'tolak'):?>
+						<span class="task-cat red">Ditolak</span>
+						<?php elseif ($value['pinjaman_status'] == 'setuju'):?>
+						<span class="task-cat green">Disetujui</span>
+						<?php
+						endif;
+						?>
+					</td>
                     <td>
                         <div class="row">
                             <a href="#" class="btn-flat waves-effect waves-red col l6 center" title="tolak pengajuan">
@@ -74,6 +86,10 @@
                         <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
                     </div>
                 </div>
+				<?php
+				$no++;
+				endforeach;
+				?>
                 </tbody>
             </table>
         </div>

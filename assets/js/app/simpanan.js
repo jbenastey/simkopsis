@@ -61,6 +61,10 @@ $(document).ready(function () {
 							if (response.data !== null){
 								if (response.data.anggota_dokumen === null){
 									$("#dokumen-peminjaman").css({ display: "block" });
+									$("#lengkapi").html(
+										'<a href="'+baseUrl+'anggota/ubah/'+id+'" class="orange-text"><b><u>Lengkapi sekarang</u></b></a>'
+									);
+									$("#tombol-tambah").css({display: "none"});
 								} else {
 									$("#dokumen-peminjaman-done").css({ display: "block" });
 								}

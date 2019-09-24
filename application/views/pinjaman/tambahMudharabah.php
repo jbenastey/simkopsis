@@ -4,7 +4,7 @@
 			<div class="card-panel">
 				<h5 class="more-text center grey-text">tambah data pinjaman mudharabah</h5>
 
-				<form action="<?= base_url('anggota/tambah') ?>" method="post" autocomplete="off">
+				<form action="<?= base_url('pinjaman-mudharabah/tambah') ?>" enctype="multipart/form-data" method="post" autocomplete="off">
 
 					<div class="row margin">
 						<div class="col s12 m1">
@@ -37,7 +37,6 @@
 							<div class="col s12 m12 ">
 								<div id="simpanan-alert" class="card green lighten-5 z-depth-1">
 									<div class="card-content green-text ">
-
 										<p><span><i class="mdi-navigation-check"></i></span> Dokumen sudah lengkap</p>
 									</div>
 								</div>
@@ -45,77 +44,13 @@
 						</div>
 
 						<div id="dokumen-peminjaman" style="display: none">
-
-							<h6 class="more-text">Dokumen Syarat Peminjaman</h6>
-
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text" placeholder="fotocopy KTP">
+							<div class="col s12 m12 ">
+								<div id="simpanan-alert" class="card orange lighten-5 z-depth-1">
+									<div class="card-content orange-text ">
+										<p><span><i class="mdi-navigation-close"></i></span> Dokumen belum lengkap <span id="lengkapi"></span></p>
+									</div>
 								</div>
 							</div>
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text" placeholder="fotocopy KK">
-								</div>
-							</div>
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text"
-										   placeholder="fotocopy Tagihan Listrik">
-								</div>
-							</div>
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text"
-										   placeholder="fotocopy Jaminan (BPKB/STNK dll)">
-								</div>
-							</div>
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text"
-										   placeholder="Surat Keterangan Bekerja (Karyawan)">
-								</div>
-							</div>
-							<div class="file-field input-field col s6 m6">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text" placeholder="Slip Gaji Karyawan">
-								</div>
-							</div>
-							<div class="file-field input-field col s12 m12">
-								<div class="btn">
-									<span><i class="mdi-file-attachment"></i></span>
-									<input type="file">
-								</div>
-								<div class="file-path-wrapper">
-									<input class="file-path validate" type="text"
-										   placeholder="fotocopy Tagihan Listrik">
-								</div>
-							</div>
-
 						</div>
 
 						<div class="col s12 m12 ">
@@ -139,7 +74,7 @@
 							   class="btn waves-effect col s12 z-depth-0 grey lighten-4 black-text">batalkan</a>
 						</div>
 						<div class="input-field col s12 m6">
-							<button type="submit" name="tambah" class="btn waves-effect waves-light col s12 blue">
+							<button type="submit" name="tambah" class="btn waves-effect waves-light col s12 blue" id="tombol-tambah">
 								tambahkan
 							</button>
 						</div>
