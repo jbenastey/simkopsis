@@ -49,6 +49,31 @@ $(document).ready(function () {
                 onClickEvent: function () {
                     var id = $("#search-anggota").getSelectedItemData().id;
                     $('input#id-anggota').val(id);
+                    // console.log(id);
+					let url = baseUrl+'Service/detailAnggota/'+id;
+					$.ajax({
+						url:url,
+						async : true,
+						dataType:'json',
+						cache : false,
+						type: 'GET',
+						success: function (response) {
+							if (response.data !== null){
+								if (response.data.anggota_dokumen === null){
+									$("#dokumen-peminjaman").css({ display: "block" });
+									$("#lengkapi").html(
+										'<a href="'+baseUrl+'anggota/ubah/'+id+'" class="orange-text"><b><u>Lengkapi sekarang</u></b></a>'
+									);
+									$("#tombol-tambah").css({display: "none"});
+								} else {
+									$("#dokumen-peminjaman-done").css({ display: "block" });
+								}
+							}
+						},
+						error : function (response) {
+							console.log(response.text);
+						}
+					});
                 }
             }
         };
