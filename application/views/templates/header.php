@@ -164,9 +164,13 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('pemesanan')?>">Daftar Pesanan</a>
+                                    <li><a href="<?= base_url('angsuran-mudharabah')?>">Mudharabah</a>
                                     </li>
-                                    <li><a href="<?= base_url('pemesanan/permohonan')?>">Permohonan Pesanan</a>
+                                    <li><a href="<?= base_url('')?>">Murabhahah</a>
+                                    </li>
+                                    <li><a href="<?= base_url('')?>">Musyarakah</a>
+                                    </li>
+                                    <li><a href="<?= base_url('')?>">Ijarah</a>
                                     </li>
                                 </ul>
                             </div>
