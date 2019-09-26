@@ -45,6 +45,7 @@ class AngsuranController extends GLOBAL_Controller{
 			}
 		} else {
 			$data['title'] = 'Data Angsuran Mudharabah';
+			$data['angsuran'] = parent::model('AngsuranModel')->lihat_semua();
 
 			parent::template('angsuran/mudharabah',$data);
 		}

@@ -29,18 +29,22 @@
                     </tr>
                 </thead>
                 <tbody>
+				<?php
+				$no = 1;
+				foreach ($angsuran as $key=>$value):
+				?>
                     <tr>
-                        <td class="grey-text text-darken-1">no</td>
+                        <td class="grey-text text-darken-1"><?=$no?></td>
                         <td class="teal-text text-darken-1">
                             <a href="#" style="text-decoration: underline">
-                                nama
+                                <?=$value['anggota_nama']?>
                             </a>
                         </td>
-                        <td class="grey-text text-darken-1">#</td>
+                        <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
                         <td class="grey-text text-darken-1">
-                            #
+							<?=$value['angsuran_date_created']?>
                         </td>
-                        <td class="grey-text text-darken-1">#</td>
+                        <td class="grey-text text-darken-1"><?=$value['angsuran_jumlah']?></td>
                         <td>
                             <div class="row">
                                 <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
@@ -67,6 +71,10 @@
                             <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
                         </div>
                     </div>
+				<?php
+				$no++;
+				endforeach;
+				?>
                 </tbody>
             </table>
         </div>
