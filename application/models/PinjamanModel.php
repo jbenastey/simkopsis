@@ -19,4 +19,12 @@ class PinjamanModel extends GLOBAL_Model
 	public function tambah($data){
 		return parent::insert_with_status('simkopsis_pinjaman',$data);
 	}
+
+	public function ubah($id,$data){
+		return parent::update_table_with_status('simkopsis_pinjaman','pinjaman_id',$id,$data);
+	}
+
+	public function lihat($query){
+		return parent::get_array_of_row('simkopsis_pinjaman',$query);
+	}
 }

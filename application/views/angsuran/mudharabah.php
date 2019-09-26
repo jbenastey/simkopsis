@@ -4,7 +4,7 @@
             <div class="card-content margin" style="margin: 12px;">
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <h4 class="cardbox-text light left margin">daftar simpanan amanah</h4>
+                        <h4 class="cardbox-text light left margin">daftar angsuran mudharabah</h4>
                     </div>
                     <!--                    <div class="col s6 m6 l6">-->
                     <!--                        <a href="#tambah-kategori" class="btn-flat white-text blue right waves-effect waves-light modal-trigger">-->
@@ -83,7 +83,7 @@
 
 <!-- Modal delete -->
 <div id="modal-tambah" class="modal">
-    <?=form_open('simpanan-amanah')?>
+    <?=form_open('angsuran-mudharabah')?>
     <div class="modal-content center">
         <div class="row">
             <div class="col s12 m12 center">
@@ -106,19 +106,20 @@
             <div class="input-field col s12 m12">
                 <i class="mdi-action-account-balance-wallet prefix grey-text text-lighten-1"></i>
                 <input id="setoran" type="number" class="validate" name="angsuran" required>
+                <input id="pinjaman-id" type="hidden" name="pinjaman-id" required>
                 <label for="setoran">Jumlah Angsuran</label>
             </div>
 
             <div class="input-field col s12 m12">
                 <i class="mdi-editor-attach-money prefix grey-text text-lighten-1"></i>
-                <input id="setoran" type="text" class="validate" name="pinjaman" required value="total pinjaman tersisa" readonly disabled>
-                <label for="setoran">Jumlah Pinjaman</label>
+                <input id="pinjaman" type="text" class="validate" name="pinjaman" required value="total pinjaman tersisa" readonly disabled>
+                <label for="pinjaman">Jumlah Pinjaman</label>
             </div>
 
             <div class="input-field col s12 m12">
                 <i class="mdi-image-timer prefix grey-text text-lighten-1"></i>
-                <input id="setoran" type="text" class="validate" name="tenggat_wakttu" required value="4 bulan" readonly disabled>
-                <label for="setoran">Jangka Waktu Peminjaman</label>
+                <input id="tenggat" type="text" class="validate" name="tenggat_waktu" required value="hari" readonly disabled>
+                <label for="tenggat">Jangka Waktu Peminjaman (hari)</label>
             </div>
 
 <!--            <div class="col s12 m12 ">-->
