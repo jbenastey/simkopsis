@@ -113,7 +113,7 @@
 
                 <div class="input-field col s12 m12">
                     <i class="mdi-action-account-balance-wallet prefix grey-text text-lighten-1"></i>
-                    <input id="setoran" type="text" class="validate rupiah-input" name="setoran" required>
+                    <input id="setoran" type="number" name="setoran" required>
                     <label for="setoran">Jumlah Setoran</label>
                 </div>
 

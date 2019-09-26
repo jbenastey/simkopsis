@@ -22,7 +22,7 @@
 
 						<div class="input-field col s12 m12">
 							<i class="mdi-action-account-balance-wallet prefix grey-text text-lighten-1"></i>
-							<input id="pinjaman" type="text" class="validate rupiah-input" name="total-pinjam" required>
+							<input id="pinjaman" type="number" name="total-pinjam" required>
 							<label for="pinjaman">Total Pinjam</label>
 						</div>
 

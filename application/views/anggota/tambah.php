@@ -44,7 +44,7 @@
 
                         <div class="input-field col s12 m6">
                             <i class="mdi-editor-attach-money prefix grey-text text-lighten-1"></i>
-                            <input id="pendapatan" type="text" name="pendapatan" required class="rupiah-input">
+                            <input id="pendapatan" type="number" name="pendapatan" required>
                             <label for="pendapatan">Pendapatan Perbulan</label>
                         </div>
 
