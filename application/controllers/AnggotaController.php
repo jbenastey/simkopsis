@@ -28,6 +28,10 @@ class AnggotaController extends GLOBAL_Controller
 			'simpanan_anggota_id' => $id
 		);
 		$data['simpanan'] = parent::model('AnggotaModel')->lihat_simpanan($querySimpanan)->result_array();
+		$queryPinjaman = array(
+			'pinjaman_anggota_id' => $id
+		);
+		$data['pinjaman'] = parent::model('AnggotaModel')->lihat_pinjaman($queryPinjaman)->result_array();
 
         parent::template('anggota/detail',$data);
     }

@@ -4,7 +4,7 @@ $(document).ready(function () {
 
     injectAnggotaInputSearch();
 
-    function injectAnggotaInputSearch() {
+	function injectAnggotaInputSearch() {
         let url = baseUrl+'Service/anggota';
         let anggotas = [];
         $.ajax({
@@ -50,35 +50,64 @@ $(document).ready(function () {
                     var id = $("#search-anggota").getSelectedItemData().id;
                     $('input#id-anggota').val(id);
                     // console.log(id);
-					let url = baseUrl+'Service/detailAnggota/'+id;
-					$.ajax({
-						url:url,
-						async : true,
-						dataType:'json',
-						cache : false,
-						type: 'GET',
-						success: function (response) {
-							if (response.data !== null){
-								if (response.data.anggota_dokumen === null){
-									$("#dokumen-peminjaman").css({ display: "block" });
-									$("#lengkapi").html(
-										'<a href="'+baseUrl+'anggota/ubah/'+id+'" class="orange-text"><b><u>Lengkapi sekarang</u></b></a>'
-									);
-									$("#tombol-tambah").css({display: "none"});
-								} else {
-									$("#dokumen-peminjaman-done").css({ display: "block" });
-								}
-							}
-						},
-						error : function (response) {
-							console.log(response.text);
-						}
-					});
+					cekDokumen(id);
+					cekAngsuranMudharabah(id);
                 }
             }
         };
 
         $("#search-anggota").easyAutocomplete(options);
     }
+
+    function cekDokumen(id) {
+		let url = baseUrl+'Service/detailAnggota/'+id;
+		$.ajax({
+			url:url,
+			async : true,
+			dataType:'json',
+			cache : false,
+			type: 'GET',
+			success: function (response) {
+				if (response.data !== null){
+					if (response.data.anggota_dokumen === null){
+						$("#dokumen-peminjaman").css({ display: "block" });
+						$("#lengkapi").html(
+							'<a href="'+baseUrl+'anggota/ubah/'+id+'" class="orange-text"><b><u>Lengkapi sekarang</u></b></a>'
+						);
+						$("#tombol-tambah").css({display: "none"});
+					} else {
+						$("#dokumen-peminjaman-done").css({ display: "block" });
+					}
+				}
+			},
+			error : function (response) {
+				console.log(response.text);
+			}
+		});
+	}
+
+
+	function cekAngsuranMudharabah(id) {
+		let url = baseUrl+'Service/pinjamanMudharabah/'+id;
+		$.ajax({
+			url:url,
+			async : true,
+			dataType:'json',
+			cache : false,
+			type: 'GET',
+			success: function (response) {
+				if (response.data !== null){
+					console.log(response.data);
+					$("#pinjaman-id").val(response.data.pinjaman_id);
+					$("#pinjaman").val(response.data.pinjaman_total);
+					$("#tenggat").val(response.data.pinjaman_tenggat);
+				}
+			},
+			error : function (response) {
+				console.log(response.text);
+			}
+		});
+	}
+
 
 });

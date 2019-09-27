@@ -60,6 +60,27 @@
             }
         }
 
+        public function pinjamanMudharabah($id){
+			$queryPinjaman = array(
+				'pinjaman_anggota_id' => $id,
+				'pinjaman_jenis' => 'mudharobah'
+			);
+			$pinjaman = parent::model('anggota')->lihat_pinjaman($queryPinjaman)->row_array();
+			if (!empty($pinjaman)){
+				echo json_encode(array(
+					'data' => $pinjaman,
+					'status' => '200',
+					'message' => 'menampilkan data pinjaman'
+				));
+			}else{
+				echo json_encode(array(
+					'data' => null,
+					'status' => '500',
+					'message' => 'data anggota kosong'
+				));
+			}
+		}
+
         /*
          * end of get data service
          * */

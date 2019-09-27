@@ -106,21 +106,27 @@
                     </div>
                     <div class="col s12 m12">
                         <ul class="collection">
+							<?php
+							foreach ($pinjaman as $key=>$value):
+							?>
                             <li class="collection-item">
                                 <div class="row">
                                     <div class="col s3 m3 grey-text">
-                                        <i class="mdi-av-timer"></i> 4 agustus 2019
+                                        <i class="mdi-av-timer"></i> <?=$value['pinjaman_date_created']?>
                                     </div>
                                     <div class="col s3 m3">
                                         <span class="orange-text">
-                                            <i class="mdi-editor-attach-money"></i> 20jt
+											Rp. <?=$value['pinjaman_total']?>
                                         </span>
                                     </div>
                                     <div class="col s6 m6">
-                                        <span class="right green-text text-darken-3"><i class="mdi-action-credit-card"></i>Pinjaman Mudharabah</span>
+                                        <span class="right green-text text-darken-3"><i class="mdi-action-credit-card"></i>Pinjaman <?=$value['pinjaman_jenis']?></span>
                                     </div>
                                 </div>
                             </li>
+							<?php
+							endforeach;
+							?>
                         </ul>
                     </div>
                 </div>
