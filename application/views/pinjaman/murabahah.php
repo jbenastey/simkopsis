@@ -66,20 +66,31 @@
 						</td>
 						<?php
 						if ($this->session->userdata('level') == 'ketua'):
-							?>
-							<td>
-								<div class="row">
-									<a href="#" class="btn-flat waves-effect waves-red col l6 center"
-									   title="tolak pengajuan">
-										<i class="mdi-av-not-interested red-text"></i>
-									</a>
+							if ($value['pinjaman_status'] == 'tunggu'):
+								?>
+								<td>
+									<div class="row">
+										<a href="<?=base_url('pinjaman/tolak/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-red col l6 center"
+										   title="tolak pengajuan">
+											<i class="mdi-av-not-interested red-text"></i>
+										</a>
+										<a href="<?=base_url('pinjaman/setuju/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-green col l6 center"
+										   title="setujui pengajuan">
+											<i class="mdi-action-done green-text"></i>
+										</a>
+									</div>
+								</td>
+							<?php
+							else:
+								?>
+								<td>
 									<a href="#" class="btn-flat waves-effect waves-green col l6 center"
-									   title="setujui pengajuan">
+									   title="selesai">
 										<i class="mdi-action-done green-text"></i>
 									</a>
-								</div>
-							</td>
-						<?php
+								</td>
+							<?php
+							endif;
 						endif;
 						?>
 					</tr>

@@ -35,6 +35,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     // insert
 	$route['pinjaman-mudharabah/tambah'] = 'PinjamanController/tambahMudharabah';
 
+	//disposisi
+	$route['pinjaman/setuju/(:any)'] = 'PinjamanController/setuju/$1';
+	$route['pinjaman/tolak/(:any)'] = 'PinjamanController/tolak/$1';
+
 	/*
 	 * simpanan routes modul
 	 * */
