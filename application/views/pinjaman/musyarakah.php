@@ -27,7 +27,7 @@
 					<th>Total Pinjaman</th>
 					<th>Status Pengajuan Pinjaman</th>
 					<?php
-					if ($this->session->userdata('level') == 'pengurus'):
+					if ($this->session->userdata('level') == 'ketua'):
 						?>
 						<th class="center">AKSI</th>
 					<?php
@@ -65,7 +65,7 @@
 							?>
 						</td>
 						<?php
-						if ($this->session->userdata('level') == 'pengurus'):
+						if ($this->session->userdata('level') == 'ketua'):
 							?>
 							<td>
 								<div class="row">
