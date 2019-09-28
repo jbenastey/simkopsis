@@ -88,9 +88,9 @@
                         </div>
                         <div class="col col s8 m8 l8">
                             <a class="btn-flat  waves-effect waves-light white-text profile-btn" href="#" >
-                                Pengguna
+                                <?= $this->session->userdata('name')?>
                             </a>
-                            <p class="user-roal">Level</p>
+                            <p class="user-roal"><?= $this->session->userdata('level');?></p>
                         </div>
                     </div>
                 </li>
