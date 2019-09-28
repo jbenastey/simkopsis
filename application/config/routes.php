@@ -11,6 +11,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 * laporan routes modul
 	 * */
 	$route['laporan-anggota'] = 'LaporanController/anggota';
+	$route['laporan-simpanan'] = 'LaporanController/simpananAnggota';
+	$route['laporan-pinjaman'] = 'LaporanController/pinjamanAnggota';
 	$route['laporan-tagihan-koperasi'] = 'LaporanController/tagihanKoperasi';
 
     /*
