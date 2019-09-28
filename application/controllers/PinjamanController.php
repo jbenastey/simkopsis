@@ -9,14 +9,44 @@ class PinjamanController extends GLOBAL_Controller{
 		$this->load->model($model);
     }
 
+    /*
+     * get modul
+     * */
     public function pinjamanMudharabah()
     {
-        $data['title'] = 'Simpanan Amanah';
+        $data['title'] = 'Pinjaman Mudharabah';
 		$data['mudharabah'] = parent::model('PinjamanModel')->lihat_semua()->result_array();
 
         parent::template('pinjaman/mudharabah',$data);
     }
 
+    public function pinjamanMurabahah()
+    {
+        $data['title'] = 'Pinjaman Murabahah';
+        $data['murabahah'] = parent::model('PinjamanModel')->lihat_semua()->result_array();
+
+        parent::template('pinjaman/murabahah',$data);
+    }
+
+    public function pinjamanMusyarakah()
+    {
+        $data['title'] = 'Pinjaman Musyarakah';
+        $data['musyarakah'] = parent::model('PinjamanModel')->lihat_semua()->result_array();
+
+        parent::template('pinjaman/musyarakah',$data);
+    }
+
+    public function pinjamanIjarah()
+    {
+        $data['title'] = 'Pinjaman Ijarah';
+        $data['ijarah'] = parent::model('PinjamanModel')->lihat_semua()->result_array();
+
+        parent::template('pinjaman/ijarah',$data);
+    }
+
+    /*
+     * insert modul
+     * */
     public function tambahMudharabah()
     {
     	if (isset($_POST['tambah'])){

@@ -118,15 +118,13 @@
                                 <ul>
                                     <li><a href="<?= base_url('simpanan-amanah')?>">Amanah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Berjangka</a>
+                                    <li><a href="<?= base_url('simpanan-qurban-aqikah')?>">Qurban/Aqikah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Qurban/Aqikah</a>
+                                    <li><a href="<?= base_url('simpanan-umrah')?>">Umrah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Umrah</a>
+                                    <li><a href="<?= base_url('simpanan-idul-fitri')?>">Idul Fitri</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Idul Fitri</a>
-                                    </li>
-                                    <li><a href="<?= base_url('')?>">Wadi'ah</a>
+                                    <li><a href="<?= base_url('simpanan-wadiah')?>">Wadi'ah</a>
                                     </li>
                                 </ul>
                             </div>
@@ -144,11 +142,11 @@
                                 <ul>
                                     <li><a href="<?= base_url('pinjaman-mudharabah')?>">Mudharabah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Murabhahah</a>
+                                    <li><a href="<?= base_url('pinjaman-murabahah')?>">Murabhahah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Musyarakah</a>
+                                    <li><a href="<?= base_url('pinjaman-musyarakah')?>">Musyarakah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Ijarah</a>
+                                    <li><a href="<?= base_url('pinjaman-ijarah')?>">Ijarah</a>
                                     </li>
                                 </ul>
                             </div>
@@ -166,11 +164,11 @@
                                 <ul>
                                     <li><a href="<?= base_url('angsuran-mudharabah')?>">Mudharabah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Murabhahah</a>
+                                    <li><a href="<?= base_url('angsuran-murabahah')?>">Murabhahah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Musyarakah</a>
+                                    <li><a href="<?= base_url('angsuran-musyarakah')?>">Musyarakah</a>
                                     </li>
-                                    <li><a href="<?= base_url('')?>">Ijarah</a>
+                                    <li><a href="<?= base_url('angsuran-ijarah')?>">Ijarah</a>
                                     </li>
                                 </ul>
                             </div>
@@ -186,13 +184,9 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('laporan-anggota')?>">Anggota</a>
+                                    <li><a href="<?= base_url('laporan-anggota')?>">Buku Anggota</a>
                                     </li>
-                                    <li><a href="<?= base_url('arsip/pelanggan')?>">Simpanan</a>
-                                    </li>
-                                    <li><a href="<?= base_url('arsip/pengguna')?>">Pinjaman</a>
-                                    </li>
-                                    <li><a href="<?= base_url('arsip/pengguna')?>">Angsuran</a>
+                                    <li><a href="<?= base_url('laporan-tagihan-koperasi')?>">Daftar Tagihan</a>
                                     </li>
                                 </ul>
                             </div>

@@ -17,5 +17,13 @@ class LaporanController extends GLOBAL_Controller
         parent::template('laporan/anggota',$data);
     }
 
+    public function tagihanKoperasi()
+    {
+        $data['title'] = 'Rekap Laporan Anggota Koperasi ';
+        $data['tagihan'] = parent::model('AnggotaModel')->lihat_semua();
+
+        parent::template('laporan/tagihan',$data);
+    }
+
 
 }

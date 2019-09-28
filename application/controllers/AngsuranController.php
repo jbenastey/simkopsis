@@ -50,4 +50,28 @@ class AngsuranController extends GLOBAL_Controller{
 			parent::template('angsuran/mudharabah',$data);
 		}
     }
+
+    public function angsuranMurabahah()
+    {
+        $data['title'] = 'Angsuran Murabahah';
+        $data['murabahah'] = parent::model('AngsuranModel')->lihat_semua();
+
+        parent::template('angsuran/murabahah',$data);
+    }
+
+    public function angsuranMusyarakah()
+    {
+        $data['title'] = 'Angsuran Murabahah';
+        $data['musyarakah'] = parent::model('AngsuranModel')->lihat_semua();
+
+        parent::template('angsuran/musyarakah',$data);
+    }
+
+    public function angsuranIjarah()
+    {
+        $data['title'] = 'Angsuran Murabahah';
+        $data['ijarah'] = parent::model('AngsuranModel')->lihat_semua();
+
+        parent::template('angsuran/ijarah',$data);
+    }
 }

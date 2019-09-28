@@ -11,22 +11,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	 * laporan routes modul
 	 * */
 	$route['laporan-anggota'] = 'LaporanController/anggota';
+	$route['laporan-tagihan-koperasi'] = 'LaporanController/tagihanKoperasi';
 
     /*
     * angsuran routes modul
     * */
     $route['angsuran-mudharabah'] = 'AngsuranController/angsuranMudharabah';
+    $route['angsuran-murabahah'] = 'AngsuranController/angsuranMurabahah';
+    $route['angsuran-musyarakah'] = 'AngsuranController/angsuranMusyarakah';
+    $route['angsuran-ijarah'] = 'AngsuranController/angsuranIjarah';
 
-/*
- * pinjaman routes modul
- * */
+    /*
+     * pinjaman routes modul
+     * */
+    // view
 	$route['pinjaman-mudharabah'] = 'PinjamanController/pinjamanMudharabah';
+	$route['pinjaman-murabahah'] = 'PinjamanController/pinjamanMurabahah';
+	$route['pinjaman-musyarakah'] = 'PinjamanController/pinjamanMusyarakah';
+	$route['pinjaman-ijarah'] = 'PinjamanController/pinjamanIjarah';
+
+    // insert
 	$route['pinjaman-mudharabah/tambah'] = 'PinjamanController/tambahMudharabah';
 
 	/*
 	 * simpanan routes modul
 	 * */
 	$route['simpanan-amanah'] = 'SimpananController/simpananAmanah';
+	$route['simpanan-qurban-aqikah'] = 'SimpananController/simpananQurbanAqikah';
+	$route['simpanan-umrah'] = 'SimpananController/simpananUmrah';
+	$route['simpanan-idul-fitri'] = 'SimpananController/simpananIdulFitri';
+	$route['simpanan-wadiah'] = 'SimpananController/simpananWadiah';
 
 	/*
 	 * anggota modul routes

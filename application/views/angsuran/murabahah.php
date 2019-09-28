@@ -4,7 +4,7 @@
             <div class="card-content margin" style="margin: 12px;">
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <h4 class="cardbox-text light left margin">daftar angsuran mudharabah</h4>
+                        <h4 class="cardbox-text light left margin">daftar angsuran murabahah</h4>
                     </div>
                     <!--                    <div class="col s6 m6 l6">-->
                     <!--                        <a href="#tambah-kategori" class="btn-flat white-text blue right waves-effect waves-light modal-trigger">-->
@@ -31,8 +31,8 @@
                 <tbody>
 				<?php
 				$no = 1;
-				foreach ($angsuran as $key=>$value):
-                    if ($value['jenis_pinjaman'] === 'mudharobah'):
+				foreach ($murabahah as $key=>$value):
+                    if ($value['jenis_pinjaman'] === 'murabahah'):
 				?>
                     <tr>
                         <td class="grey-text text-darken-1"><?=$no?></td>
@@ -97,7 +97,7 @@
     <div class="modal-content center">
         <div class="row">
             <div class="col s12 m12 center">
-                <h5 class="more-text">tambah data angsuran pinjaman mudharabah</h5>
+                <h5 class="more-text">tambah data angsuran pinjaman murabahah</h5>
                 <h5 class="divider"></h5>
             </div>
 
