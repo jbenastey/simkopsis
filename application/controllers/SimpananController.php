@@ -36,4 +36,36 @@ class SimpananController extends GLOBAL_Controller{
 		}
     }
 
+    public function simpananQurbanAqikah()
+    {
+        $data['title'] = 'Simpanan Aqikah/Qurban';
+        $data['aqikahQurban'] = parent::model('SimpananModel')->lihat_semua()->result_array();
+
+        parent::template('simpanan/aqikahQurban',$data);
+    }
+
+    public function simpananUmrah()
+    {
+        $data['title'] = 'Simpanan Aqikah/Qurban';
+        $data['umrah'] = parent::model('SimpananModel')->lihat_semua()->result_array();
+
+        parent::template('simpanan/umrah',$data);
+    }
+
+    public function simpananIdulFitri()
+    {
+        $data['title'] = 'Simpanan Aqikah/Qurban';
+        $data['idulFitri'] = parent::model('SimpananModel')->lihat_semua()->result_array();
+
+        parent::template('simpanan/idulFitri',$data);
+    }
+
+    public function simpananWadiah()
+    {
+        $data['title'] = 'Simpanan Aqikah/Qurban';
+        $data['wadiah'] = parent::model('SimpananModel')->lihat_semua()->result_array();
+
+        parent::template('simpanan/wadiah',$data);
+    }
+
 }

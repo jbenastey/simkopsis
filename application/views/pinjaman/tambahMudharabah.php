@@ -28,7 +28,7 @@
 
 						<div class="input-field col s12 m12 " style="margin-bottom: 30px">
 							<i class="mdi-device-access-time prefix grey-text text-lighten-1"></i>
-							<input id="tenggat" type="text" class="validate rupiah-input" name="tenggat-pinjam"
+							<input id="tenggat" type="number" class="validate" name="tenggat-pinjam"
 								   required>
 							<label for="tenggat">Tenggat Waktu Peminjaman</label>
 						</div>

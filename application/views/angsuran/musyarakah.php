@@ -4,7 +4,7 @@
             <div class="card-content margin" style="margin: 12px;">
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <h4 class="cardbox-text light left margin">daftar angsuran mudharabah</h4>
+                        <h4 class="cardbox-text light left margin">daftar angsuran musyarakah</h4>
                     </div>
                     <!--                    <div class="col s6 m6 l6">-->
                     <!--                        <a href="#tambah-kategori" class="btn-flat white-text blue right waves-effect waves-light modal-trigger">-->
@@ -19,21 +19,21 @@
             <div class="divider"></div>
             <table class="bordered" id="barang-table">
                 <thead>
-                    <tr>
-                        <th >Kode Anggota</th>
-                        <th >Nama Anggota</th>
-                        <th >Pekerjaan</th>
-                        <th >Tanggal Simpan</th>
-                        <th >Total Setoran</th>
-                        <th class="center">AKSI</th>
-                    </tr>
+                <tr>
+                    <th >Kode Anggota</th>
+                    <th >Nama Anggota</th>
+                    <th >Pekerjaan</th>
+                    <th >Tanggal Simpan</th>
+                    <th >Total Setoran</th>
+                    <th class="center">AKSI</th>
+                </tr>
                 </thead>
                 <tbody>
-				<?php
-				$no = 1;
-				foreach ($angsuran as $key=>$value):
-                    if ($value['jenis_pinjaman'] === 'mudharobah'):
-				?>
+                <?php
+                $no = 1;
+                foreach ($musyarakah as $key=>$value):
+                    if ($value['jenis_pinjaman'] === 'musyarakah'):
+                ?>
                     <tr>
                         <td class="grey-text text-darken-1"><?=$no?></td>
                         <td class="teal-text text-darken-1">
@@ -43,7 +43,7 @@
                         </td>
                         <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
                         <td class="grey-text text-darken-1">
-							<?=$value['angsuran_date_created']?>
+                            <?=$value['angsuran_date_created']?>
                         </td>
                         <td class="grey-text text-darken-1"><?=$value['angsuran_jumlah']?></td>
                         <td>
@@ -72,11 +72,11 @@
                             <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
                         </div>
                     </div>
-				<?php
-				        $no++;
+                <?php
+                        $no++;
                     endif;
-				endforeach;
-				?>
+                endforeach;
+                ?>
                 </tbody>
             </table>
         </div>
@@ -97,7 +97,7 @@
     <div class="modal-content center">
         <div class="row">
             <div class="col s12 m12 center">
-                <h5 class="more-text">tambah data angsuran pinjaman mudharabah</h5>
+                <h5 class="more-text">tambah data angsuran pinjaman musyarakah</h5>
                 <h5 class="divider"></h5>
             </div>
 
@@ -132,13 +132,13 @@
                 <label for="tenggat">Jangka Waktu Peminjaman (hari)</label>
             </div>
 
-<!--            <div class="col s12 m12 ">-->
-<!--                <div id="simpanan-alert" class="card green lighten-5 z-depth-1">-->
-<!--                    <div class="card-content green-text ">-->
-<!--                        <p>SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="col s12 m12 ">-->
+            <!--                <div id="simpanan-alert" class="card green lighten-5 z-depth-1">-->
+            <!--                    <div class="card-content green-text ">-->
+            <!--                        <p>SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.</p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
         </div>
     </div>

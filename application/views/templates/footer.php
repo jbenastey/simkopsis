@@ -94,7 +94,7 @@
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/numeral/numeral.min.js')?>"></script>
             <!-- easy autocomplete -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/easy-autocomplete/jquery.easy-autocomplete.js')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/simpanan.js')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/anggotaSearch.js?v=1.0.0')?>"></script>
 
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/jquery-input-mask/jquery.mask.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/app/maskConfig.js')?>"></script>
@@ -103,14 +103,9 @@
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/dataTables.material.min.js')?>"></script>
             <!-- dataTables js plugins-->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/printThis.js')?>"></script>
-            <script type="text/javascript" src="<?= base_url('assets/js/app/cetak.js?v=1.0.3')?>"></script>
             <!-- chartist -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/chartist-js/chartist.min.js')?>"></script>
-            
-            <!-- chartjs -->
-            <!--<script type="text/javascript" src="js/plugins/chartjs/chart.min.js"></script>-->
-            <!--<script type="text/javascript" src="js/plugins/chartjs/chart-script.js"></script>-->
-            
+
             <!-- sparkline -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/sparkline/jquery.sparkline.min.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/sparkline/sparkline-script.js')?>"></script>

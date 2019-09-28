@@ -4,7 +4,7 @@
             <div class="card-content margin" style="margin: 12px;">
                 <div class="row">
                     <div class="col s6 m6 l6">
-                        <h4 class="cardbox-text light left margin">daftar simpanan amanah</h4>
+                        <h4 class="cardbox-text light left margin">daftar simpanan Umrah</h4>
                     </div>
                     <!--                    <div class="col s6 m6 l6">-->
                     <!--                        <a href="#tambah-kategori" class="btn-flat white-text blue right waves-effect waves-light modal-trigger">-->
@@ -31,8 +31,8 @@
                 <tbody>
 				<?php
 				$no  = 1;
-				foreach ($amanah as $key=>$value):
-                    if ($value['simpanan_jenis'] === 'amanah'):
+				foreach ($umrah  as $key=>$value):
+                    if ($value['simpanan_jenis'] === 'umroh'):
                 ?>
                 <tr>
                     <td class="grey-text text-darken-1"><?=$no?></td>
@@ -73,7 +73,7 @@
                     </div>
                 </div>
 				<?php
-                        $no++;
+				        $no++;
 				    endif;
 				endforeach;
 				?>
@@ -97,7 +97,7 @@
         <div class="modal-content center">
             <div class="row">
                 <div class="col s12 m12 center">
-                    <h5 class="more-text">tambah data simpanan amanah</h5>
+                    <h5 class="more-text">tambah data simpanan umrah</h5>
                     <h5 class="divider"></h5>
                 </div>
 
@@ -122,7 +122,7 @@
                 <div class="col s12 m12 ">
                     <div id="simpanan-alert" class="card green lighten-5 z-depth-1">
                         <div class="card-content green-text ">
-                            <p>SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.</p>
+                            <p>SIMPANAN UMRAH : Adalah jenis produk simpanan yang disediakan untuk persiapan melakukan ibadah umroh atau haji sebagai tambahan uang saku atau pelunasan pembayaran ongkos umroh atau haji. Waktu pengambilan simpanan dapat dilakukan 1 bulan sebelum keberangkatan. Setoran awal minimal sebesar Rp 500.000.</p>
                         </div>
                     </div>
                 </div>
