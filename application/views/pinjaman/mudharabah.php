@@ -45,7 +45,7 @@
                     </td>
                     <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
                     <td class="grey-text text-darken-1"><?=$value['pinjaman_date_created']?></td>
-                    <td class="grey-text text-darken-1"><?=$value['pinjaman_total']?></td>
+                    <td class="grey-text text-darken-1"> Rp <?= number_format($value['pinjaman_total'],2,",",".")?></td>
                     <td class="grey-text text-darken-1">
 						<?php if ($value['pinjaman_status'] == 'tunggu'):?>
 						<span class="task-cat orange">Menunggu</span>

@@ -32,7 +32,7 @@
                 <?php
                 $no = 1;
                 foreach ($musyarakah as $key=>$value):
-                    if ($value['jenis_pinjaman'] === 'musyarakah'):
+                    if ($value['pinjaman_jenis'] === 'musyarakah'):
                 ?>
                     <tr>
                         <td class="grey-text text-darken-1"><?=$no?></td>

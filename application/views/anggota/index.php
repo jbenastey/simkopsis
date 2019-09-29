@@ -38,7 +38,7 @@
 					<td class="grey-text text-darken-1"><?=$value['anggota_email']?></td>
 					<td class="grey-text text-darken-1"><?=$value['anggota_nomor_hp']?></td>
 					<td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
-					<td class="grey-text text-darken-1"><?=$value['anggota_pendapatan']?></td>
+                    <td class="grey-text text-darken-1"> Rp <?= number_format($value['anggota_pendapatan'],2,",",".")?></td>
 					<td>
 						<div class="row">
 							<a href="<?=base_url('anggota/ubah/'.$value['anggota_id'])?>" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
