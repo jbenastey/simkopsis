@@ -34,4 +34,13 @@ class AnggotaModel extends GLOBAL_Model{
 	public function hapus($query){
 		return parent::delete_row_with_status('simkopsis_anggota',$query);
 	}
+
+	/*
+	 * special query
+	 * */
+	public function get_total_simpanan_by_jenis($idAnggota,$jenis)
+    {
+        $query = "SELECT SUM(simpanan_total) FROM simkopsis_simpanan WHERE simpanan_anggota_id = $idAnggota AND simpanan_jenis = '$jenis'";
+        return parent::db()->query($query)->row_array();
+    }
 }

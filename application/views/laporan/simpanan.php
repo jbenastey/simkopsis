@@ -42,40 +42,63 @@
                                     <h6 class="cardbox-text">Tanggal : <?= date('d/m/Y',time());?></h6>
                                 </div>
                             </div>
-                            <h5 class="divider"></h5>
                         </div>
                         <br>
                         <div class="col m12 l12" style="display: block; width: 100%">
                             <table class="bordered">
                                 <thead>
                                 <tr>
-                                    <th>No</th>
-                                    <th>Nama </th>
-                                    <th>Simpanan Amanah</th>
-                                    <th>Simpanan Qurban/Aqikah</th>
-                                    <th>Simpanan Umrah/Haji</th>
-                                    <th>Simpanan Idul Fitri</th>
-                                    <th>Simpanan Wadi'ah</th>
+                                    <th class="laporan">No</th>
+                                    <th class="laporan">Nama </th>
+                                    <th class="laporan">Simpanan Amanah</th>
+                                    <th class="laporan">Simpanan Qurban/Aqikah</th>
+                                    <th class="laporan">Simpanan Umrah/Haji</th>
+                                    <th class="laporan">Simpanan Idul Fitri</th>
+                                    <th class="laporan">Simpanan Wadi'ah</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $no = 1;
+                                $totalAmanah = 0;
+                                $totalKurban = 0;
+                                $totalUmrah  = 0;
+                                $totalIdulFitri = 0;
+                                $totalWadiah = 0;
+                                foreach ($anggota as $key=>$value):
+                                    $amanah = $model->get_total_simpanan_by_jenis($value['anggota_id'],'amanah');
+                                    $kurban = $model->get_total_simpanan_by_jenis($value['anggota_id'],'kurban');
+                                    $umroh = $model->get_total_simpanan_by_jenis($value['anggota_id'],'umroh');
+                                    $idulFitri = $model->get_total_simpanan_by_jenis($value['anggota_id'],'idul_fitri');
+                                    $wadiah = $model->get_total_simpanan_by_jenis($value['anggota_id'],'wadiah');
+
+                                ?>
                                 <tr>
-                                    <td>1</td>
-                                    <td>Rian</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="laporan"><?= $no;?></td>
+                                    <td class="laporan"><?= $value['anggota_nama']?></td>
+                                    <td class="laporan">Rp <?= number_format($amanah['SUM(simpanan_total)'],2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($kurban['SUM(simpanan_total)'],2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($umroh['SUM(simpanan_total)'],2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($idulFitri['SUM(simpanan_total)'],2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($wadiah['SUM(simpanan_total)'],2,",",".")?></td>
                                 </tr>
+                                <?php
+                                    $totalAmanah+= (int)$amanah['SUM(simpanan_total)'];
+                                    $totalKurban+= (int)$kurban['SUM(simpanan_total)'];
+                                    $totalUmrah+= (int)$umroh['SUM(simpanan_total)'];
+                                    $totalIdulFitri+= (int)$idulFitri['SUM(simpanan_total)'];
+                                    $totalWadiah+= (int)$wadiah['SUM(simpanan_total)'];
+                                    $no++;
+                                endforeach;
+                                ?>
 
                                 <tr>
-                                    <td colspan="2">Total Jumlah</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td colspan="2" class="laporan">Total Jumlah</td>
+                                    <td class="laporan">Rp <?= number_format($totalAmanah,2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($totalKurban,2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($totalUmrah,2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($totalIdulFitri,2,",",".")?></td>
+                                    <td class="laporan">Rp <?= number_format($totalWadiah,2,",",".")?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -90,7 +113,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <h6 class="cardbox-text center">Nama Admin</h6>
+                                    <h6 class=" center"><?= ucfirst($this->session->userdata('name'))?></h6>
                                 </div>
                             </div>
                         </div>

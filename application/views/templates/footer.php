@@ -104,6 +104,7 @@
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/dataTables.material.min.js')?>"></script>
             <!-- dataTables js plugins-->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/printThis.js')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/cetak.js')?>"></script>
             <!-- chartist -->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/chartist-js/chartist.min.js')?>"></script>
 

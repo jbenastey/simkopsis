@@ -27,8 +27,8 @@
 					<th>Total Pinjaman</th>
 					<th>Status Pengajuan Pinjaman</th>
 					<?php
-					if ($this->session->userdata('level') == 'ketua'):
-						?>
+					if ($this->session->userdata('level') === 'ketua'):
+                    ?>
 						<th class="center">AKSI</th>
 					<?php
 					endif;
@@ -39,6 +39,7 @@
 				<?php
 				$no = 1;
 				foreach ($mudharabah as $key=>$value):
+                    if ($value['pinjaman_jenis'] === 'mudharobah'):
 				?>
                 <tr>
                     <td class="grey-text text-darken-1">
@@ -59,37 +60,39 @@
 						<span class="task-cat red">Ditolak</span>
 						<?php elseif ($value['pinjaman_status'] == 'setuju'):?>
 						<span class="task-cat green">Disetujui</span>
+                        <?php endif;?>
+                    </td>
 
-						<?php
-						if ($this->session->userdata('level') == 'ketua'):
-							if ($value['pinjaman_status'] == 'tunggu'):
-                        ?>
-							<td>
-								<div class="row">
-									<a href="<?=base_url('pinjaman/tolak/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-red col l6 center"
-									   title="tolak pengajuan">
-										<i class="mdi-av-not-interested red-text"></i>
-									</a>
-									<a href="<?=base_url('pinjaman/setuju/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-green col l6 center"
-									   title="setujui pengajuan">
-										<i class="mdi-action-done green-text"></i>
-									</a>
-								</div>
-							</td>
-								<?php
-							else:
-								?>
-							<td>
-								<a href="#" class="btn-flat waves-effect waves-green col l6 center"
-								   title="selesai">
-									<i class="mdi-action-done green-text"></i>
-								</a>
-							</td>
+                    <?php
+                    if ($this->session->userdata('level') === 'ketua'):
+                        if ($value['pinjaman_status'] == 'tunggu'):
+                            ?>
+                            <td>
+                                <div class="row">
+                                    <a href="<?=base_url('pinjaman/tolak/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-red col l6 center"
+                                       title="tolak pengajuan">
+                                        <i class="mdi-av-not-interested red-text"></i>
+                                    </a>
+                                    <a href="<?=base_url('pinjaman/setuju/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-green col l6 center"
+                                       title="setujui pengajuan">
+                                        <i class="mdi-action-done green-text"></i>
+                                    </a>
+                                </div>
+                            </td>
                         <?php
-							endif;
-						endif;
-						?>
-					</tr>
+                        else:
+                            ?>
+                            <td>
+                                <a href="#" class="btn-flat waves-effect waves-green col l6 center"
+                                   title="selesai">
+                                    <i class="mdi-action-done green-text"></i>
+                                </a>
+                            </td>
+                        <?php
+                        endif;
+                    endif;
+                    ?>
+                </tr>
 
 					<!-- Modal delete -->
 					<div id="delete" class="modal">
@@ -108,8 +111,8 @@
 							<a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
 						</div>
 					</div>
-					<?php
-					$no++;
+                <?php
+					    $no++;
 					endif;
 				endforeach;
 				?>

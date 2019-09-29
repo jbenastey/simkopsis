@@ -46,7 +46,7 @@
                         <td class="grey-text text-darken-1"><?= $value['anggota_email'] ?></td>
                         <td class="grey-text text-darken-1"><?= $value['anggota_nomor_hp'] ?></td>
                         <td class="grey-text text-darken-1"><?= $value['anggota_pekerjaan'] ?></td>
-                        <td class="grey-text text-darken-1"><?= $value['anggota_pendapatan'] ?></td>
+                        <td class="grey-text text-darken-1"> Rp <?= number_format($value['anggota_pendapatan'],2,",",".")?></td>
                         <?php
                         if ($this->session->userdata('level') == 'pengurus'):
                             ?>
