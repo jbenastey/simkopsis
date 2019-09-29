@@ -37,7 +37,7 @@
                 <tr>
                     <td class="grey-text text-darken-1"><?=$no?></td>
                     <td class="teal-text text-darken-1">
-                        <a href="<?= base_url('anggota/kode')?>" style="text-decoration: underline">
+                        <a href="<?= base_url('anggota/'.$value['anggota_id'])?>" style="text-decoration: underline">
 							<?=$value['anggota_nama']?>
                         </a>
                     </td>
@@ -45,7 +45,7 @@
                     <td class="grey-text text-darken-1">
 						<?=$value['simpanan_date_created']?>
                     </td>
-                    <td class="grey-text text-darken-1"><?=$value['simpanan_total']?></td>
+                    <td class="grey-text text-darken-1"> Rp <?= number_format($value['simpanan_total'],2,",",".")?></td>
                     <td>
                         <div class="row">
                             <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
@@ -109,13 +109,11 @@
                 <div class="input-field col s12 m11">
                     <input id="search-anggota" type="text" class="validate custom-box-search" name="anggota-form" required placeholder="ketikkan nama anggota">
                     <input type="text" name="anggota" id="id-anggota" hidden>
-                    <!--set jenis simpanan directly-->
-                    <input type="text" name="jenis" value="amanah" hidden>
                 </div>
 
                 <div class="input-field col s12 m12">
                     <i class="mdi-action-account-balance-wallet prefix grey-text text-lighten-1"></i>
-                    <input id="setoran" type="number" name="setoran" required>
+                    <input id="setoran" type="number" name="setoran" required class="simpanan-input" data-minimal="10000">
                     <label for="setoran">Jumlah Setoran</label>
                 </div>
 
@@ -130,7 +128,7 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button type="submit" name="simpan" class="waves-effect waves-red btn-flat modal-action modal-close">lanjutkan</button>
+            <button type="submit" name="simpan" class="waves-effect waves-red btn-flat " id="simpanan-simpan-button">simpan</button>
             <a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
         </div>
     <?=form_close()?>

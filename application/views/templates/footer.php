@@ -98,6 +98,7 @@
 
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/jquery-input-mask/jquery.mask.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/app/maskConfig.js')?>"></script>
+            <script type="text/javascript" src="<?= base_url('assets/js/app/simpananValidation.js')?>"></script>
             <!-- dataTables js plugins-->
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/jquery.dataTables.min.js')?>"></script>
             <script type="text/javascript" src="<?= base_url('assets/js/plugins/dtables/dataTables.material.min.js')?>"></script>

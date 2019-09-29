@@ -15,7 +15,7 @@
                             <img src="<?= base_url('assets/images/favicon/simkopsis-icon.png')?>" alt="" width="110px" height="110px">
                         </div>
                         <div class="col m10 l10" style="width: 80%; display: inline">
-                            <h5 class="cardbox-text ">Koperasi Simpan Pinjam Syariah Pengadilan Agama Negeri Riau</h5>
+                            <h5 class="cardbox-text ">Koperasi Simpan pinjam syariah pengadilan agama pekanbaru klas 1a</h5>
                             <h6 class="light ">Jl. Datuk Setia Maharaja/Parit Indah, Tengkerang Labuai, Pekanbaru, Kota Pekanbaru, Riau 28289</h6>
                             <div class="row">
                                 <div class="col m6 l6" style="width: 50%;display: inline;text-align: left">
