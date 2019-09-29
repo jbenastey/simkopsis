@@ -7,6 +7,10 @@ class PinjamanController extends GLOBAL_Controller{
         parent::__construct();
         $model = array('PinjamanModel');
 		$this->load->model($model);
+		if (!parent::hasLogin()) {
+			$this->session->set_flashdata('alert', 'belum_login');
+			redirect(base_url('login'));
+		}
     }
 
     /*
@@ -75,4 +79,35 @@ class PinjamanController extends GLOBAL_Controller{
 		}
     }
 
+	public function setuju($id){
+		$data = array(
+			'pinjaman_status' => 'setuju',
+		);
+
+		$update = parent::model('PinjamanModel')->ubah($id,$data);
+
+		if ($update > 0 ){
+			parent::alert('alert','sukses_setuju');
+			redirect(base_url());
+		} else {
+			parent::alert('alert','gagal_setuju');
+			redirect(base_url());
+		}
+	}
+
+	public function tolak($id){
+		$data = array(
+			'pinjaman_status' => 'tolak',
+		);
+
+		$update = parent::model('PinjamanModel')->ubah($id,$data);
+
+		if ($update > 0 ){
+			parent::alert('alert','sukses_tolak');
+			redirect(base_url());
+		} else {
+			parent::alert('alert','gagal_tolak');
+			redirect(base_url());
+		}
+	}
 }

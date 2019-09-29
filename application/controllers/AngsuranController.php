@@ -7,6 +7,10 @@ class AngsuranController extends GLOBAL_Controller{
         parent::__construct();
         $model = array('AngsuranModel','PinjamanModel');
 		$this->load->model($model);
+		if (!parent::hasLogin()) {
+			$this->session->set_flashdata('alert', 'belum_login');
+			redirect(base_url('login'));
+		}
     }
 
     public function angsuranMudharabah()

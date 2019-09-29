@@ -44,7 +44,7 @@
 	
 	<div id="login-page" class="row">
 		<div class="col s12 z-depth-4 card-panel">
-			<form class="login-form" action="#" method="post">
+			<form class="login-form" action="<?=base_url('login')?>" method="post">
 				<div class="row">
 					<div class="input-field col s12 center">
 						<img src="<?= base_url('assets/images/favicon/simkopsis-brand.png')?>" alt="" class=" responsive-img valign profile-image-login">
@@ -61,14 +61,14 @@
 					<?php endif;?>
 					<div class="input-field col s12">
 						<i class="mdi-social-person-outline prefix"></i>
-						<input id="username" type="text" name="username">
+						<input id="username" type="text" name="username" required>
 						<label for="username" class="center-align">Nama Pengguna</label>
 					</div>
 				</div>
 				<div class="row margin">
 					<div class="input-field col s12">
 						<i class="mdi-action-lock-outline prefix"></i>
-						<input id="password" type="password" name="password">
+						<input id="password" type="password" name="password" required>
 						<label for="password">Kata Sandi</label>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 				<div class="row">
 					<div class="input-field col s12 m6 l6 ">
 						<p class="margin right-align medium-small">
-							<a href="<?= base_url('login/forgot')?>">Lupa Password ?</a>
+<!--							<a href="--><?//= base_url('login/forgot')?><!--">Lupa Password ?</a>-->
 						</p>
 					</div>
 				</div>
