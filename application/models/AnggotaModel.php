@@ -43,4 +43,10 @@ class AnggotaModel extends GLOBAL_Model{
         $query = "SELECT SUM(simpanan_total) FROM simkopsis_simpanan WHERE simpanan_anggota_id = $idAnggota AND simpanan_jenis = '$jenis'";
         return parent::db()->query($query)->row_array();
     }
+
+    public function get_total_pinjaman_by_jenis($idAnggota,$jenis)
+    {
+        $query = "SELECT SUM(pinjaman_total) FROM simkopsis_pinjaman WHERE pinjaman_anggota_id = $idAnggota AND pinjaman_jenis = '$jenis'";
+        return parent::db()->query($query)->row_array();
+    }
 }

@@ -15,7 +15,7 @@
                             <img src="<?= base_url('assets/images/favicon/simkopsis-icon.png')?>" alt="" width="110px" height="110px">
                         </div>
                         <div class="col m10 l10" style="width: 80%; display: inline">
-                            <h5 class="cardbox-text ">Koperasi Simpan Pinjam Syariah Pengadilan Agama Negeri Riau</h5>
+                            <h5 class="cardbox-text ">Koperasi Simpan pinjam syariah pengadilan agama pekanbaru klas 1a</h5>
                             <h6 class="light ">Jl. Datuk Setia Maharaja/Parit Indah, Tengkerang Labuai, Pekanbaru, Kota Pekanbaru, Riau 28289</h6>
                             <div class="row">
                                 <div class="col m6 l6" style="width: 50%;display: inline;text-align: left">
@@ -42,37 +42,56 @@
                                     <h6 class="cardbox-text">Tanggal : <?= date('d/m/Y',time());?></h6>
                                 </div>
                             </div>
-                            <h5 class="divider"></h5>
                         </div>
                         <br>
                         <div class="col m12 l12" style="display: block; width: 100%">
                             <table class="bordered">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Nama </th>
-                                        <th>Pinjaman Mudharabah</th>
-                                        <th>Pinjaman Murabhahah</th>
-                                        <th>Pinjaman Musyarakah</th>
-                                        <th>Pinjaman Ijarah</th>
+                                        <th class="laporan">No</th>
+                                        <th class="laporan">Nama </th>
+                                        <th class="laporan">Pinjaman Mudharabah</th>
+                                        <th class="laporan">Pinjaman Murabhahah</th>
+                                        <th class="laporan">Pinjaman Musyarakah</th>
+                                        <th class="laporan">Pinjaman Ijarah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Rian</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
 
+                                <?php
+                                    $no = 1;
+                                    $mudharabahTotal = 0;
+                                    $murabahahTotal = 0;
+                                    $musyarakahTotal = 0;
+                                    $ijarahTotal = 0;
+                                    foreach ($anggota as $key=>$value):
+                                        $mudharabah = $model->get_total_pinjaman_by_jenis($value['anggota_id'],'mudharobah');
+                                        $murabahah = $model->get_total_pinjaman_by_jenis($value['anggota_id'],'murabahah');
+                                        $musyarakah = $model->get_total_pinjaman_by_jenis($value['anggota_id'],'musyarakah');
+                                        $ijarah = $model->get_total_pinjaman_by_jenis($value['anggota_id'],'ijarah');
+                                ?>
                                     <tr>
-                                        <td colspan="2">Total Jumlah</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td class="laporan"><?= $no?></td>
+                                        <td class="laporan"><?= $value['anggota_nama']?></td>
+                                        <td class="laporan">Rp <?= number_format($mudharabah['SUM(pinjaman_total)'],2,",",".")?></td>
+                                        <td class="laporan">Rp <?= number_format($murabahah['SUM(pinjaman_total)'],2,",",".")?></td>
+                                        <td class="laporan">Rp <?= number_format($musyarakah['SUM(pinjaman_total)'],2,",",".")?></td>
+                                        <td class="laporan">Rp <?= number_format($ijarah['SUM(pinjaman_total)'],2,",",".")?></td>
+                                    </tr>
+                                <?php
+                                    $mudharabahTotal += (int)$mudharabah['SUM(pinjaman_total)'];
+                                    $murabahahTotal += (int)$murabahah['SUM(pinjaman_total)'];
+                                    $musyarakahTotal += (int)$musyarakah['SUM(pinjaman_total)'];
+                                    $ijarahTotal += (int)$ijarah['SUM(pinjaman_total)'];
+                                    $no++;
+                                    endforeach;
+                                ?>
+                                    <tr>
+                                        <td colspan="2" class="laporan">Total</td>
+                                        <td class="laporan">Rp <?= number_format($mudharabahTotal,2,',','.')?></td>
+                                        <td class="laporan">Rp <?= number_format($murabahahTotal,2,',','.')?></td>
+                                        <td class="laporan">Rp <?= number_format($musyarakahTotal,2,',','.')?></td>
+                                        <td class="laporan">Rp <?= number_format($ijarahTotal,2,',','.')?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -90,7 +109,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <h6 class="cardbox-text center">Nama Admin</h6>
+                                    <h6 class=" center"><?= ucfirst($this->session->userdata('name'))?></h6>
                                 </div>
                             </div>
                         </div>

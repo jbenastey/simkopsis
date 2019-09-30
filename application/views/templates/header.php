@@ -184,14 +184,14 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('laporan-anggota')?>">Buku Anggota</a>
-                                    </li>
+<!--                                    <li><a href="--><?//= base_url('laporan-anggota')?><!--">Buku Anggota</a>-->
+<!--                                    </li>-->
                                     <li><a href="<?= base_url('laporan-simpanan')?>">Daftar Simpanan</a>
                                     </li>
                                     <li><a href="<?= base_url('laporan-pinjaman')?>">Daftar Pinjaman</a>
                                     </li>
-                                    <li><a href="<?= base_url('laporan-tagihan-koperasi')?>">Daftar Tagihan</a>
-                                    </li>
+<!--                                    <li><a href="--><?//= base_url('laporan-tagihan-koperasi')?><!--">Daftar Tagihan</a>-->
+<!--                                    </li>-->
                                 </ul>
                             </div>
                         </li>

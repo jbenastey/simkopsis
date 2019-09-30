@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Sep 2019 pada 18.56
+-- Waktu pembuatan: 01 Okt 2019 pada 01.17
 -- Versi server: 10.1.35-MariaDB
 -- Versi PHP: 7.2.9
 
@@ -74,7 +74,29 @@ CREATE TABLE `simkopsis_angsuran` (
 --
 
 INSERT INTO `simkopsis_angsuran` (`angsuran_id`, `angsuran_pinjaman_id`, `angsuran_jumlah`, `angsuran_date_created`) VALUES
-(1, 1, 70, '2019-09-27 10:07:06');
+(2, 1, 230000, '2019-10-01 04:00:58');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `simkopsis_penarikan`
+--
+
+CREATE TABLE `simkopsis_penarikan` (
+  `penarikan_id` int(11) NOT NULL,
+  `anggota_id` int(11) NOT NULL,
+  `simpanan_jenis` enum('amanah','kurban','pendidikan','umroh','idul_fitri','wadiah') NOT NULL,
+  `penarikan_jumlah` double NOT NULL,
+  `pnerikan_tanggal` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `simkopsis_penarikan`
+--
+
+INSERT INTO `simkopsis_penarikan` (`penarikan_id`, `anggota_id`, `simpanan_jenis`, `penarikan_jumlah`, `pnerikan_tanggal`) VALUES
+(2, 2, 'amanah', 20000, '2019-10-01 03:45:10'),
+(3, 2, 'amanah', 50000, '2019-10-01 03:46:47');
 
 -- --------------------------------------------------------
 
@@ -121,7 +143,31 @@ CREATE TABLE `simkopsis_pinjaman` (
 --
 
 INSERT INTO `simkopsis_pinjaman` (`pinjaman_id`, `pinjaman_anggota_id`, `pinjaman_jenis`, `pinjaman_total`, `pinjaman_tenggat`, `pinjaman_keterangan`, `pinjaman_status`, `pinjaman_date_created`) VALUES
-(1, 2, 'mudharobah', 230, 3, 'PINJAMAN MUDHARABAH : Mudharobah adalah akad kerjasama usaha antara pemilik dana sebagai pihak yang menyediakan modal dengan pihak pengelola modal (koperasi), untuk diusahakan dengan bagi hasil (nisbah) sesuai dengan kesepakatan dimuka dari kedua belah pihak. Dalam hal ini Koperasi akan memberikan 100% permodalan kepada pengusaha yang telah memiliki tenaga kerja dan keterampilan tetapi belum memiliki modal sama sekali.', 'setuju', '2019-09-25 15:14:34');
+(1, 2, 'mudharobah', 0, 3, 'PINJAMAN MUDHARABAH : Mudharobah adalah akad kerjasama usaha antara pemilik dana sebagai pihak yang menyediakan modal dengan pihak pengelola modal (koperasi), untuk diusahakan dengan bagi hasil (nisbah) sesuai dengan kesepakatan dimuka dari kedua belah pihak. Dalam hal ini Koperasi akan memberikan 100% permodalan kepada pengusaha yang telah memiliki tenaga kerja dan keterampilan tetapi belum memiliki modal sama sekali.', 'setuju', '2019-09-25 15:14:34'),
+(2, 2, 'mudharobah', 4000000, 45, 'PINJAMAN MUDHARABAH : Mudharobah adalah akad kerjasama usaha antara pemilik dana sebagai pihak yang menyediakan modal dengan pihak pengelola modal (koperasi), untuk diusahakan dengan bagi hasil (nisbah) sesuai dengan kesepakatan dimuka dari kedua belah pihak. Dalam hal ini Koperasi akan memberikan 100% permodalan kepada pengusaha yang telah memiliki tenaga kerja dan keterampilan tetapi belum memiliki modal sama sekali.', 'tunggu', '2019-10-01 04:41:21');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `simkopsis_saldo`
+--
+
+CREATE TABLE `simkopsis_saldo` (
+  `saldo_id` int(11) NOT NULL,
+  `anggota_id` int(11) NOT NULL,
+  `simpanan_jenis` enum('amanah','kurban','pendidikan','umroh','idul_fitri','wadiah') NOT NULL,
+  `saldo_total` double NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `simkopsis_saldo`
+--
+
+INSERT INTO `simkopsis_saldo` (`saldo_id`, `anggota_id`, `simpanan_jenis`, `saldo_total`) VALUES
+(6, 2, 'amanah', 70000),
+(7, 3, 'amanah', 100000),
+(8, 2, 'kurban', 100000),
+(9, 3, 'umroh', 1500000);
 
 -- --------------------------------------------------------
 
@@ -143,13 +189,15 @@ CREATE TABLE `simkopsis_simpanan` (
 --
 
 INSERT INTO `simkopsis_simpanan` (`simpanan_id`, `simpanan_anggota_id`, `simpanan_jenis`, `simpanan_total`, `simpanan_keterangan`, `simpanan_date_created`) VALUES
-(1, 2, 'amanah', 300000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-09-21 14:44:23'),
-(2, 2, 'amanah', 90000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-09-29 13:33:15'),
-(3, 3, 'kurban', 100000, 'SIMPANAN AQIQAH/QURBAN : Adalah simpanan yang dipersiapkan untuk membantu pembelian hewan kurban pada saat hari raya Idul Adha atau pembelian hewan untuk Aqiqoh. Simpanan dapat diambil 1 bulan sebelum hari raya Idul Adha atau untuk keperluan Aqiqoh simpanan dapat diambil sesuai keinginan. Setoran awal minimal Rp 100.000 selanjutnya minimal Rp 50.000.', '2019-09-29 13:46:19'),
-(4, 3, 'amanah', 100000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-09-29 14:07:37'),
-(5, 2, 'idul_fitri', 300000, 'SIMPANAN IDUL FITRI : Adalah jenis simpanan yang disediakan untuk kebutuhan menjelang hari raya Idul Fitri yang proses pengambilannya hanya bisa dilakukan 1 bulan sebelum hari raya Idul Fitri. Setoran awal minimal Rp 25.000 selanjutnya minimal Rp 10.000', '2019-09-29 14:19:01'),
-(6, 2, 'umroh', 8000000, 'SIMPANAN IDUL FITRI : Adalah jenis simpanan yang disediakan untuk kebutuhan menjelang hari raya Idul Fitri yang proses pengambilannya hanya bisa dilakukan 1 bulan sebelum hari raya Idul Fitri. Setoran awal minimal Rp 25.000 selanjutnya minimal Rp 10.000', '2019-09-29 14:27:45'),
-(7, 3, 'wadiah', 90000, 'SIMPANAN WADIAH : Adalah jenis simpanan atau penitipan dana dimana pihak Koperasi dengan atau tanpa izin pemilik dana dapat memanfaatkan dana titipan dan harus bertanggung jawab terhadap dana tersebut. Semua manfaat dan keuntungan yang diperoleh dalam penggunaan dana tersebut menjadi hak penerima titipan. Waktu penyimpanan dan penarikan simpanan dapat dilakukan kapan saja sesuai keinginan pemilik dana. Simpanan awal sebesar Rp 25.000,- dan selanjutnya tidak dibatasi', '2019-09-29 15:16:06');
+(11, 2, 'amanah', 100000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-10-01 02:22:16'),
+(12, 2, 'amanah', 20000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-10-01 02:23:37'),
+(13, 3, 'amanah', 50000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-10-01 02:24:05'),
+(14, 3, 'amanah', 50000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-10-01 02:24:19'),
+(16, 2, 'kurban', 50000, 'SIMPANAN AQIQAH/QURBAN : Adalah simpanan yang dipersiapkan untuk membantu pembelian hewan kurban pada saat hari raya Idul Adha atau pembelian hewan untuk Aqiqoh. Simpanan dapat diambil 1 bulan sebelum hari raya Idul Adha atau untuk keperluan Aqiqoh simpanan dapat diambil sesuai keinginan. Setoran awal minimal Rp 100.000 selanjutnya minimal Rp 50.000.', '2019-10-01 02:26:57'),
+(17, 2, 'kurban', 50000, 'SIMPANAN AQIQAH/QURBAN : Adalah simpanan yang dipersiapkan untuk membantu pembelian hewan kurban pada saat hari raya Idul Adha atau pembelian hewan untuk Aqiqoh. Simpanan dapat diambil 1 bulan sebelum hari raya Idul Adha atau untuk keperluan Aqiqoh simpanan dapat diambil sesuai keinginan. Setoran awal minimal Rp 100.000 selanjutnya minimal Rp 50.000.', '2019-10-01 02:27:25'),
+(18, 3, 'umroh', 1000000, 'SIMPANAN UMRAH : Adalah jenis produk simpanan yang disediakan untuk persiapan melakukan ibadah umroh atau haji sebagai tambahan uang saku atau pelunasan pembayaran ongkos umroh atau haji. Waktu pengambilan simpanan dapat dilakukan 1 bulan sebelum keberangkatan. Setoran awal minimal sebesar Rp 500.000.', '2019-10-01 02:30:57'),
+(19, 3, 'umroh', 500000, 'SIMPANAN UMRAH : Adalah jenis produk simpanan yang disediakan untuk persiapan melakukan ibadah umroh atau haji sebagai tambahan uang saku atau pelunasan pembayaran ongkos umroh atau haji. Waktu pengambilan simpanan dapat dilakukan 1 bulan sebelum keberangkatan. Setoran awal minimal sebesar Rp 500.000.', '2019-10-01 02:31:24'),
+(20, 2, 'amanah', 20000, 'SIMPANAN AMANAH : Simpanan bersifat umum yang penyimpanan dan penarikannya dapat dilakukan kapan saja oleh nasabah pada jam kerja. Simpanan awal Rp 25.000 dan selanjutnya minimal Rp 10.000.', '2019-10-01 03:47:16');
 
 --
 -- Indexes for dumped tables
@@ -168,6 +216,12 @@ ALTER TABLE `simkopsis_angsuran`
   ADD PRIMARY KEY (`angsuran_id`);
 
 --
+-- Indeks untuk tabel `simkopsis_penarikan`
+--
+ALTER TABLE `simkopsis_penarikan`
+  ADD PRIMARY KEY (`penarikan_id`);
+
+--
 -- Indeks untuk tabel `simkopsis_pengguna`
 --
 ALTER TABLE `simkopsis_pengguna`
@@ -178,6 +232,12 @@ ALTER TABLE `simkopsis_pengguna`
 --
 ALTER TABLE `simkopsis_pinjaman`
   ADD PRIMARY KEY (`pinjaman_id`);
+
+--
+-- Indeks untuk tabel `simkopsis_saldo`
+--
+ALTER TABLE `simkopsis_saldo`
+  ADD PRIMARY KEY (`saldo_id`);
 
 --
 -- Indeks untuk tabel `simkopsis_simpanan`
@@ -199,7 +259,13 @@ ALTER TABLE `simkopsis_anggota`
 -- AUTO_INCREMENT untuk tabel `simkopsis_angsuran`
 --
 ALTER TABLE `simkopsis_angsuran`
-  MODIFY `angsuran_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `angsuran_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `simkopsis_penarikan`
+--
+ALTER TABLE `simkopsis_penarikan`
+  MODIFY `penarikan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `simkopsis_pengguna`
@@ -211,13 +277,19 @@ ALTER TABLE `simkopsis_pengguna`
 -- AUTO_INCREMENT untuk tabel `simkopsis_pinjaman`
 --
 ALTER TABLE `simkopsis_pinjaman`
-  MODIFY `pinjaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pinjaman_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `simkopsis_saldo`
+--
+ALTER TABLE `simkopsis_saldo`
+  MODIFY `saldo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `simkopsis_simpanan`
 --
 ALTER TABLE `simkopsis_simpanan`
-  MODIFY `simpanan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `simpanan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

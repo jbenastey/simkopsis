@@ -26,9 +26,6 @@ class LaporanController extends GLOBAL_Controller
         $data['title'] = 'Rekap Laporan Anggota Koperasi ';
         $data['model'] = parent::model('AnggotaModel');
         $data['anggota'] = parent::model('AnggotaModel')->lihat_semua();
-//        $cek = parent::model('AnggotaModel')->get_total_simpanan_by_jenis(2,'amanah');
-
-//        parent::type_dump($cek['SUM(simpanan_total)']);
 
         parent::template('laporan/simpanan',$data);
     }
@@ -36,6 +33,7 @@ class LaporanController extends GLOBAL_Controller
     public function pinjamanAnggota()
     {
         $data['title'] = 'Rekap Laporan Anggota Koperasi ';
+        $data['model'] = parent::model('AnggotaModel');
         $data['anggota'] = parent::model('AnggotaModel')->lihat_semua();
 
         parent::template('laporan/pinjaman',$data);
