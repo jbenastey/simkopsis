@@ -3,10 +3,10 @@
 			<div class="col s12 m12 l12">
 				<ul class="collapsible collapsible-accordion card no-padding with-header" data-collapsible="accordion">
 					<li class="collapsible-header">
-						<h4 class="light">Halaman Bantuan Sistem Order Logistik Berbasi Website</h4>
+						<h4 class="light">Halaman Bantuan Sistem Koperasi Simpan Pinjam Syariah</h4>
 					</li>
 					<li>
-						<div class="collapsible-header ">Tentang Sistem Order Logistik Berbasis Website</div>
+						<div class="collapsible-header ">Tentang Sistem Informasi Koperasi Syariah</div>
 						<div class="collapsible-body">
 							<p>
 								menyetujui, membuat surat keluar dan memeriksa seluruh data pesanan

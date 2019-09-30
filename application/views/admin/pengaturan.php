@@ -3,7 +3,7 @@
 			<div class="col s12 m12 l12">
 				<ul class="collapsible collapsible-accordion card no-padding with-header" data-collapsible="accordion">
 					<li class="collapsible-header">
-						<h4 class="light">Halaman Pengaturan Sistem Order Logistik Berbasi Website</h4>
+						<h4 class="light">Halaman Pengaturan Sistem Informasi Koperasi Simpan Pinjam Syariah</h4>
 					</li>
 					<li>
 						<div class="collapsible-header ">Pengaturan Akun</div>

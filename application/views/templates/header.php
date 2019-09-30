@@ -59,10 +59,10 @@
                         </h1>
                     </li>
                 </ul>
-                <div class="header-search-wrapper hide-on-med-and-down">
-                    <i class="mdi-action-search"></i>
-                    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Cari di Aplikasi"/>
-                </div>
+<!--                <div class="header-search-wrapper hide-on-med-and-down">-->
+<!--                    <i class="mdi-action-search"></i>-->
+<!--                    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Cari di Aplikasi"/>-->
+<!--                </div>-->
             </div>
         </nav>
     </div>

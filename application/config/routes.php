@@ -1,8 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-	
-	
+	/*
+	 * admin modul routes
+	 * */
+	$route['profil'] = 'AdminController/profil';
+	$route['bantuan'] = 'AdminController/bantuan';
+	$route['pengaturan'] = 'AdminController/pengaturan';
+
 	$route['login'] = 'AuthController/login';
 	$route['logout'] = 'AuthController/logout';
 

@@ -70,13 +70,8 @@
                         <div id="delete" class="modal">
                             <div class="modal-content">
                                 <h4 class="red-text text-lighten-1">
-                                    <i class="mdi-action-info-outline"></i> Yakin ingin menghapus barang ?
+                                    <i class="mdi-action-info-outline"></i> Yakin ingin menghapus item ?
                                 </h4>
-                                <div class="modal-content">
-                                    <h4>
-                                        item yang anda hapus akan tersimpan ke data arsip
-                                    </h4>
-                                </div>
                             </div>
                             <div class="modal-footer">
                                 <a href="<?= base_url('anggota/hapus/' . $value['anggota_id']) ?>"

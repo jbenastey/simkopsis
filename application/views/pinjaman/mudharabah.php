@@ -54,12 +54,16 @@
                     <td class="grey-text text-darken-1"><?=$value['pinjaman_date_created']?></td>
                     <td class="grey-text text-darken-1"> Rp <?= number_format($value['pinjaman_total'],2,",",".")?></td>
                     <td class="grey-text text-darken-1">
-						<?php if ($value['pinjaman_status'] == 'tunggu'):?>
-						<span class="task-cat orange">Menunggu</span>
-						<?php elseif ($value['pinjaman_status'] == 'tolak'):?>
-						<span class="task-cat red">Ditolak</span>
-						<?php elseif ($value['pinjaman_status'] == 'setuju'):?>
-						<span class="task-cat green">Disetujui</span>
+						<?php if ($value['pinjaman_total'] <= 0):?>
+                            <span class="task-cat green">Lunas</span>
+                        <?php else:?>
+                            <?php if ($value['pinjaman_status'] == 'tunggu'):?>
+                                <span class="task-cat orange">Menunggu</span>
+                            <?php elseif ($value['pinjaman_status'] == 'tolak'):?>
+                                <span class="task-cat red">Ditolak</span>
+                            <?php elseif ($value['pinjaman_status'] == 'setuju'):?>
+                                <span class="task-cat green">Disetujui</span>
+                            <?php endif;?>
                         <?php endif;?>
                     </td>
 
