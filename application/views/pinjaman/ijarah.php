@@ -38,8 +38,9 @@
 				<tbody>
 				<?php
 				$no = 1;
-				foreach ($murabahah as $key => $value):
-					?>
+				foreach ($ijarah as $key => $value):
+                    if ($value['pinjaman_jenis'] === 'ijarah'):
+                ?>
 					<tr>
 						<td class="grey-text text-darken-1">
 							<?= $no ?>
@@ -112,8 +113,9 @@
 							<a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
 						</div>
 					</div>
-					<?php
-					$no++;
+                <?php
+					    $no++;
+					endif;
 				endforeach;
 				?>
 				</tbody>

@@ -12,6 +12,7 @@
 		{
 			parent::__construct();
 			$this->load->model('AnggotaModel','anggota');
+			$this->load->model('SimpananModel','simpanan');
 		}
 
 
@@ -37,6 +38,7 @@
                 ));
             }
         }
+
         public function detailAnggota($id)
         {
 
@@ -80,6 +82,26 @@
 				));
 			}
 		}
+
+        public function getSaldoAnggota(){
+
+            $cekAnggotaExist = parent::model('simpanan')->cek_data_saldo_anggota_exists(parent::post('anggota_id'),parent::post('simpanan_jenis'));
+
+            if ($cekAnggotaExist->row_array() !== null){
+                echo json_encode(array(
+                    'data' => $cekAnggotaExist->row_array(),
+                    'status' => '200',
+                    'message' => 'menampilkan data simpanan'
+                ));
+            }else{
+                echo json_encode(array(
+                    'data' => null,
+                    'status' => '500',
+                    'message' => 'data simpanan kosong'
+                ));
+            }
+
+        }
 
         /*
          * end of get data service

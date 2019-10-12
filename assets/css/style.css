@@ -13,6 +13,9 @@
 /*----------------------------------------
   General Layout Style
 ------------------------------------------*/
+td.laporan,th.laporan{
+  border: 1px #d0d0d0 solid !important;
+}
 body {
   background-color: #f9f9f9;
 }

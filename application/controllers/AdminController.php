@@ -19,5 +19,27 @@
 			parent::template('admin/dashboard',$data);
 		}
 		
+        public function profil()
+        {
+            $data['title'] = 'Profil Admin Koperasi';
+            $data['admin'] = $this->session->userdata();
 
+            parent::template('admin/profil',$data);
+        }
+
+        public function bantuan()
+        {
+            $data['title'] = 'Bantuan Penggunaan Sistem';
+            $data['admin'] = $this->session->userdata();
+
+            parent::template('admin/bantuan',$data);
+        }
+
+        public function pengaturan()
+        {
+            $data['title'] = 'Pengaturan Sistem';
+            $data['admin'] = $this->session->userdata();
+
+            parent::template('admin/pengaturan',$data);
+        }
 	}

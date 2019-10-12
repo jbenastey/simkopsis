@@ -32,7 +32,7 @@
                 <?php
                 $no = 1;
                 foreach ($musyarakah as $key=>$value):
-                    if ($value['jenis_pinjaman'] === 'musyarakah'):
+                    if ($value['pinjaman_jenis'] === 'musyarakah'):
                 ?>
                     <tr>
                         <td class="grey-text text-darken-1"><?=$no?></td>
@@ -45,7 +45,7 @@
                         <td class="grey-text text-darken-1">
                             <?=$value['angsuran_date_created']?>
                         </td>
-                        <td class="grey-text text-darken-1"><?=$value['angsuran_jumlah']?></td>
+                        <td class="grey-text text-darken-1"> Rp <?= number_format($value['angsuran_jumlah'],2,",",".")?></td>
                         <td>
                             <div class="row">
                                 <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">

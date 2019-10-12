@@ -20,22 +20,23 @@
             <table class="bordered" id="barang-table">
                 <thead>
                     <tr>
-                        <th >Kode Anggota</th>
+                        <th>No</th>
+                        <th >Kode ID Anggota</th>
                         <th >Nama Anggota</th>
                         <th >Pekerjaan</th>
                         <th >Tanggal Simpan</th>
                         <th >Total Setoran</th>
-                        <th class="center">AKSI</th>
                     </tr>
                 </thead>
                 <tbody>
 				<?php
 				$no = 1;
 				foreach ($angsuran as $key=>$value):
-                    if ($value['jenis_pinjaman'] === 'mudharobah'):
+                    if ($value['pinjaman_jenis'] === 'mudharobah'):
 				?>
                     <tr>
                         <td class="grey-text text-darken-1"><?=$no?></td>
+                        <td class="grey-text text-darken-1"><?=$value['anggota_id']?></td>
                         <td class="teal-text text-darken-1">
                             <a href="#" style="text-decoration: underline">
                                 <?=$value['anggota_nama']?>
@@ -45,14 +46,8 @@
                         <td class="grey-text text-darken-1">
 							<?=$value['angsuran_date_created']?>
                         </td>
-                        <td class="grey-text text-darken-1"><?=$value['angsuran_jumlah']?></td>
-                        <td>
-                            <div class="row">
-                                <a href="#" class="btn-flat waves-effect waves-orange col l6 center" title="ubah data">
-                                    <i class="mdi-content-create orange-text"></i>
-                                </a>
-                            </div>
-                        </td>
+                        <td class="grey-text text-darken-1"> Rp <?= number_format($value['angsuran_jumlah'],2,",",".")?></td>
+
                     </tr>
 
                     <!-- Modal delete -->

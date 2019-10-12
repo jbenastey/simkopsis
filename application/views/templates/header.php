@@ -59,10 +59,10 @@
                         </h1>
                     </li>
                 </ul>
-                <div class="header-search-wrapper hide-on-med-and-down">
-                    <i class="mdi-action-search"></i>
-                    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Cari di Aplikasi"/>
-                </div>
+<!--                <div class="header-search-wrapper hide-on-med-and-down">-->
+<!--                    <i class="mdi-action-search"></i>-->
+<!--                    <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Cari di Aplikasi"/>-->
+<!--                </div>-->
             </div>
         </nav>
     </div>
@@ -184,14 +184,14 @@
                             </a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="<?= base_url('laporan-anggota')?>">Buku Anggota</a>
-                                    </li>
+<!--                                    <li><a href="--><?//= base_url('laporan-anggota')?><!--">Buku Anggota</a>-->
+<!--                                    </li>-->
                                     <li><a href="<?= base_url('laporan-simpanan')?>">Daftar Simpanan</a>
                                     </li>
                                     <li><a href="<?= base_url('laporan-pinjaman')?>">Daftar Pinjaman</a>
                                     </li>
-                                    <li><a href="<?= base_url('laporan-tagihan-koperasi')?>">Daftar Tagihan</a>
-                                    </li>
+<!--                                    <li><a href="--><?//= base_url('laporan-tagihan-koperasi')?><!--">Daftar Tagihan</a>-->
+<!--                                    </li>-->
                                 </ul>
                             </div>
                         </li>

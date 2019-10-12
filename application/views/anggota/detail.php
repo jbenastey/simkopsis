@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col s3 m3">
                                         <span class="orange-text">
-                                            Rp. <?=$value['simpanan_total']?>
+                                            Rp <?= number_format($value['simpanan_total'],2,",",".")?>
                                         </span>
                                     </div>
                                     <div class="col s6 m6">

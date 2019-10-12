@@ -27,8 +27,8 @@
 					<th>Total Pinjaman</th>
 					<th>Status Pengajuan Pinjaman</th>
 					<?php
-					if ($this->session->userdata('level') == 'ketua'):
-						?>
+					if ($this->session->userdata('level') === 'ketua'):
+                    ?>
 						<th class="center">AKSI</th>
 					<?php
 					endif;
@@ -38,62 +38,65 @@
 				<tbody>
 				<?php
 				$no = 1;
-				foreach ($mudharabah as $key => $value):
-					?>
-					<tr>
-						<td class="grey-text text-darken-1">
-							<?= $no ?>
-						</td>
-						<td class="teal-text text-darken-1">
-							<a href="<?= base_url('anggota/' . $value['anggota_id']) ?>"
-							   style="text-decoration: underline">
-								<?= $value['anggota_nama'] ?>
-							</a>
-						</td>
-						<td class="grey-text text-darken-1"><?= $value['anggota_pekerjaan'] ?></td>
-						<td class="grey-text text-darken-1"><?= $value['pinjaman_date_created'] ?></td>
-						<td class="grey-text text-darken-1"><?= $value['pinjaman_total'] ?></td>
-						<td class="grey-text text-darken-1">
-							<?php if ($value['pinjaman_status'] == 'tunggu'): ?>
-								<span class="task-cat orange">Menunggu</span>
-							<?php elseif ($value['pinjaman_status'] == 'tolak'): ?>
-								<span class="task-cat red">Ditolak</span>
-							<?php elseif ($value['pinjaman_status'] == 'setuju'): ?>
-								<span class="task-cat green">Disetujui</span>
-							<?php
-							endif;
-							?>
-						</td>
-						<?php
-						if ($this->session->userdata('level') == 'ketua'):
-							if ($value['pinjaman_status'] == 'tunggu'):
-							?>
-							<td>
-								<div class="row">
-									<a href="<?=base_url('pinjaman/tolak/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-red col l6 center"
-									   title="tolak pengajuan">
-										<i class="mdi-av-not-interested red-text"></i>
-									</a>
-									<a href="<?=base_url('pinjaman/setuju/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-green col l6 center"
-									   title="setujui pengajuan">
-										<i class="mdi-action-done green-text"></i>
-									</a>
-								</div>
-							</td>
-								<?php
-							else:
-								?>
-							<td>
-								<a href="#" class="btn-flat waves-effect waves-green col l6 center"
-								   title="selesai">
-									<i class="mdi-action-done green-text"></i>
-								</a>
-							</td>
-							<?php
-							endif;
-						endif;
-						?>
-					</tr>
+				foreach ($mudharabah as $key=>$value):
+                    if ($value['pinjaman_jenis'] === 'mudharobah'):
+				?>
+                <tr>
+                    <td class="grey-text text-darken-1">
+                        <?=$no?>
+                    </td>
+                    <td class="teal-text text-darken-1">
+                        <a href="<?= base_url('anggota/'.$value['anggota_id'])?>" style="text-decoration: underline">
+                            <?=$value['anggota_nama']?>
+                        </a>
+                    </td>
+                    <td class="grey-text text-darken-1"><?=$value['anggota_pekerjaan']?></td>
+                    <td class="grey-text text-darken-1"><?=$value['pinjaman_date_created']?></td>
+                    <td class="grey-text text-darken-1"> Rp <?= number_format($value['pinjaman_total'],2,",",".")?></td>
+                    <td class="grey-text text-darken-1">
+						<?php if ($value['pinjaman_total'] <= 0):?>
+                            <span class="task-cat green">Lunas</span>
+                        <?php else:?>
+                            <?php if ($value['pinjaman_status'] == 'tunggu'):?>
+                                <span class="task-cat orange">Menunggu</span>
+                            <?php elseif ($value['pinjaman_status'] == 'tolak'):?>
+                                <span class="task-cat red">Ditolak</span>
+                            <?php elseif ($value['pinjaman_status'] == 'setuju'):?>
+                                <span class="task-cat green">Disetujui</span>
+                            <?php endif;?>
+                        <?php endif;?>
+                    </td>
+
+                    <?php
+                    if ($this->session->userdata('level') === 'ketua'):
+                        if ($value['pinjaman_status'] == 'tunggu'):
+                            ?>
+                            <td>
+                                <div class="row">
+                                    <a href="<?=base_url('pinjaman/tolak/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-red col l6 center"
+                                       title="tolak pengajuan">
+                                        <i class="mdi-av-not-interested red-text"></i>
+                                    </a>
+                                    <a href="<?=base_url('pinjaman/setuju/'.$value['pinjaman_id'])?>" class="btn-flat waves-effect waves-green col l6 center"
+                                       title="setujui pengajuan">
+                                        <i class="mdi-action-done green-text"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        <?php
+                        else:
+                            ?>
+                            <td>
+                                <a href="#" class="btn-flat waves-effect waves-green col l6 center"
+                                   title="selesai">
+                                    <i class="mdi-action-done green-text"></i>
+                                </a>
+                            </td>
+                        <?php
+                        endif;
+                    endif;
+                    ?>
+                </tr>
 
 					<!-- Modal delete -->
 					<div id="delete" class="modal">
@@ -112,8 +115,9 @@
 							<a href="#!" class="waves-effect btn-flat modal-action modal-close">Batalkan</a>
 						</div>
 					</div>
-					<?php
-					$no++;
+                <?php
+					    $no++;
+					endif;
 				endforeach;
 				?>
 				</tbody>
